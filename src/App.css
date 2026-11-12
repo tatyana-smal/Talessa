@@ -1,6 +1,4 @@
 .page {
-  max-width: 1440px;
-  margin: 0 auto;
   overflow-x: clip;
   background: var(--bg);
 }
@@ -137,13 +135,14 @@
 .apps {
   display: flex;
   gap: 8px;
+  justify-content: center;
   height: 280px;
-  margin: 64px 0;
-  padding-left: 8px;
+  max-width: 1440px;
+  margin: 64px auto;
 }
 .card {
   position: relative;
-  flex: 1 1 0;
+  flex: 0 1 350px;
   min-width: 0;
   display: flex;
   flex-direction: column;
@@ -181,6 +180,8 @@
 .features {
   display: flex;
   gap: 8px;
+  max-width: 1440px;
+  margin: 0 auto;
   padding-bottom: 64px;
 }
 .feature {
