@@ -94,7 +94,9 @@ function App() {
           </div>
         </article>
         <article className="feature" id="blog">
-          <img src={blogImg} alt="" className="feature__img" />
+          <div className="feature__media feature__media--tint">
+            <img src={blogImg} alt="" className="feature__img" />
+          </div>
           <div className="feature__text">
             <h2>Блог</h2>
             <p>Про творчість, в’язання, навчання, дизайн, рослини і життя у балансі (наскільки це можливо)))</p>
