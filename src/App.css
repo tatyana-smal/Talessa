@@ -98,7 +98,8 @@
   position: absolute;
   left: 88px;
   top: 38px;
-  width: 768px;
+  /* at 1440px = 768px (as in Figma); on wider screens it grows with the photo seam (46%) */
+  width: calc(46% + 106px);
   height: 520px;
 }
 .hero__content {
