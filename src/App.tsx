@@ -88,9 +88,9 @@ function App() {
         <article className="feature" id="design">
           <img src={designImg} alt="" className="feature__img" />
           <div className="feature__text">
-            <h2>Дізайн</h2>
-            <p>Розробка, дізайн, програмуванняння цифрових продуктів та підтримка їх на різних етапах</p>
-            <a href="#design" aria-label="Дізайн"><img src={arrowSmall} alt="" /></a>
+            <h2>Дизайн</h2>
+            <p>Розробка, дизайн, програмуванняння цифрових продуктів та підтримка їх на різних етапах</p>
+            <a href="#design" aria-label="Дизайн"><img src={arrowSmall} alt="" /></a>
           </div>
         </article>
         <article className="feature" id="blog">
