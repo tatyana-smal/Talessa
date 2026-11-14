@@ -12,11 +12,13 @@ import appPlants from './assets/img/app-plants.png'
 import designImg from './assets/img/design.png'
 import blogImg from './assets/img/blog.png'
 import badge from './assets/img/badge.png'
+import cardPhones from './assets/img/card-phones.png'
+import cardDevices from './assets/img/card-devices.png'
 
 const apps = [
-  { title: 'Моя колекція пряжі', image: appYarn, badge: false, link: true },
-  { title: 'Підтримка здоров’я бітьків немовляти', image: appHealth, badge: true, link: false },
-  { title: 'Мій календар рослин', image: appPlants, badge: true, link: false },
+  { title: 'Моя колекція пряжі', image: appYarn, badge: true, art: cardPhones, artClass: 'card__art--phones' },
+  { title: 'Підтримка здоров’я бітьків немовляти', image: appHealth, badge: true, art: cardDevices, artClass: 'card__art--devices' },
+  { title: 'Мій календар рослин', image: appPlants, badge: true, art: null, artClass: '' },
 ]
 
 function App() {
@@ -79,7 +81,7 @@ function App() {
           >
             {app.badge && <img src={badge} alt="У розробці" className="card__badge" />}
             <h2>{app.title}</h2>
-            {app.link && <img src={arrow} alt="" className="card__arrow" />}
+            {app.art && <img src={app.art} alt="" className={`card__art ${app.artClass}`} />}
           </a>
         ))}
       </section>
