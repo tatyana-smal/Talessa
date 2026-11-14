@@ -17,7 +17,8 @@ import cardDevices from './assets/img/card-devices.png'
 
 const apps = [
   { title: 'Моя колекція пряжі', image: appYarn, badge: true, art: cardPhones, artClass: 'card__art--phones' },
-  { title: 'Підтримка здоров’я бітьків немовляти', image: appHealth, badge: true, art: cardDevices, artClass: 'card__art--devices' },
+  // Figma crops this photo: 120.68% x 226.61% of the card, offset -20.54% / -71.87%
+  { title: 'Підтримка здоров’я бітьків немовляти', image: appHealth, badge: true, art: cardDevices, artClass: 'card__art--devices', bgSize: '120.68% 226.61%', bgPosition: '99.32% 56.77%' },
   { title: 'Мій календар рослин', image: appPlants, badge: true, art: null, artClass: '' },
 ]
 
@@ -77,7 +78,12 @@ function App() {
             key={app.title}
             href="#apps"
             className="card card--app"
-            style={{ backgroundImage: `linear-gradient(rgba(252,241,234,.7), rgba(252,241,234,.7)), url(${app.image})` }}
+            style={{
+              backgroundImage: `linear-gradient(rgba(252,241,234,.7), rgba(252,241,234,.7)), url(${app.image})`,
+              backgroundSize: `100% 100%, ${app.bgSize ?? 'cover'}`,
+              backgroundPosition: `0 0, ${app.bgPosition ?? 'center'}`,
+              backgroundRepeat: 'no-repeat',
+            }}
           >
             {app.badge && <img src={badge} alt="У розробці" className="card__badge" />}
             <h2>{app.title}</h2>
