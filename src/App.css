@@ -253,8 +253,12 @@
   text-align: center;
 }
 .feature__text h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 63px; /* fixed in Figma */
   font-size: 36px;
-  padding: 16px;
+  padding: 0 16px;
 }
 .feature__text p {
   display: flex;
