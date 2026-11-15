@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import logo from '../assets/img/logo.png'
 import sendIcon from '../assets/img/send.svg'
 import sendSmall from '../assets/img/send-small.svg'
@@ -13,13 +13,34 @@ const links = [
 
 export default function Header() {
   const [open, setOpen] = useState(false)
+  const navRef = useRef<HTMLElement>(null)
+  const burgerRef = useRef<HTMLButtonElement>(null)
+
+  // Close the mobile menu when the user taps outside of it, or presses Escape
+  useEffect(() => {
+    if (!open) return
+    const onPointerDown = (e: PointerEvent) => {
+      const target = e.target as Node
+      if (navRef.current?.contains(target) || burgerRef.current?.contains(target)) return
+      setOpen(false)
+    }
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setOpen(false)
+    }
+    document.addEventListener('pointerdown', onPointerDown)
+    document.addEventListener('keydown', onKeyDown)
+    return () => {
+      document.removeEventListener('pointerdown', onPointerDown)
+      document.removeEventListener('keydown', onKeyDown)
+    }
+  }, [open])
 
   return (
     <header className="header">
       <a href="/" className="logo">
         <img src={logo} alt="Talessa" />
       </a>
-      <nav className={`nav ${open ? 'nav--open' : ''}`}>
+      <nav ref={navRef} className={`nav ${open ? 'nav--open' : ''}`}>
         {links.map((l) => (
           <a key={l.href} href={l.href} onClick={() => setOpen(false)}>
             {l.label}
@@ -33,6 +54,7 @@ export default function Header() {
         </a>
       </nav>
       <button
+        ref={burgerRef}
         type="button"
         className="burger"
         aria-label="Меню"
