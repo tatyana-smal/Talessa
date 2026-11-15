@@ -1,6 +1,11 @@
 import Header from '../components/Header'
 import heroPhoto from '../assets/img/app-health.png'
 import devices from '../assets/img/card-devices.png'
+import adaptive from '../assets/img/health/adaptive.webp'
+import data from '../assets/img/health/data.webp'
+import mobile from '../assets/img/health/mobile.webp'
+import errors from '../assets/img/health/errors.webp'
+import night from '../assets/img/health/night.webp'
 
 /* Case page of the "RISE" health & wellness app. The copy is in English for now;
    it will be linked from the English version of the site later. */
@@ -47,15 +52,22 @@ export default function Health() {
           where you can set up custom trackers and make notes
         </p>
       </section>
+      <img className="health-img" src={adaptive} alt="RISE account screen on laptop, tablet and phone" />
 
       <section className="yarn-section">
         <h2 className="yarn-title">Clear data and accessible analysis</h2>
         <p className="yarn-text">Clear data with result analysis and actionable AI-driven advice</p>
       </section>
+      <div className="health-band">
+        <img className="health-img health-img--narrow" src={data} alt="RISE dashboards on tablets" />
+      </div>
 
       <section className="yarn-section">
         <h2 className="yarn-title">Mobile-friendly, easy-to-read adaptation</h2>
       </section>
+      <div className="health-band">
+        <img className="health-img" src={mobile} alt="A father with a child using RISE on a phone" />
+      </div>
 
       <section className="yarn-section">
         <h2 className="yarn-title">Friendly and humorous error messages</h2>
@@ -65,6 +77,7 @@ export default function Health() {
           lighthearted and humorous, and they resonate empathetically with the target user.
         </p>
       </section>
+      <img className="health-img" src={errors} alt="Humorous 503 and 429 error screens" />
 
       <section className="yarn-section">
         <h2 className="yarn-title">Adaptation for night mode</h2>
@@ -73,6 +86,7 @@ export default function Health() {
           the screen to a comfortable night mode.
         </p>
       </section>
+      <img className="health-img" src={night} alt="RISE in light and dark mode" />
 
       <section className="yarn-end">
         <img className="yarn-end__bg" src={heroPhoto} alt="" />
