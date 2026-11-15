@@ -293,11 +293,19 @@
   .only-desktop { display: none; }
   .only-compact { display: inline; }
 
-  .header { padding: 8px; min-height: 76px; }
+  /* as in Figma: auto layout, horizontal, aligned right + centre, gap 12, header hugs the 35px menu row */
+  .header { padding: 8px; min-height: 0; margin-bottom: 10px; }
   .logo { left: 0; top: -7px; width: 182px; height: 90px; }
-  .nav { font-size: 16px; line-height: normal; gap: 12px; }
-  .nav a:not(.btn), .lang { padding: 8px; }
-  .nav__cta { gap: 4px; padding: 8px; }
+  .nav {
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    justify-content: flex-end;
+    font-size: clamp(13px, 2.08vw, 16px);
+    line-height: normal;
+    gap: clamp(2px, 1.56vw, 12px);
+  }
+  .nav a:not(.btn), .lang { padding: clamp(4px, 1.04vw, 8px); }
+  .nav__cta { gap: 4px; padding: clamp(4px, 1.04vw, 8px); }
   .send--big { display: none; }
   .send--small { display: block; }
 
