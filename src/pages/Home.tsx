@@ -2,6 +2,7 @@ import type { CSSProperties } from 'react'
 import Header from '../components/Header'
 import heroBg from '../assets/img/hero-bg.png'
 import heroFull from '../assets/img/hero-full.webp'
+import heroFullTablet from '../assets/img/hero-full-tablet.webp'
 import heroPhotoTablet from '../assets/img/hero-photo-tablet.png'
 import heroPhotoMobile from '../assets/img/hero-photo-mobile.png'
 import heroFade from '../assets/img/hero-fade-mobile.svg'
@@ -48,7 +49,11 @@ export default function Home() {
 
       <section className="hero" id="top">
         {/* Desktop: one merged image (background + photo + text fade) that scales as a whole */}
-        <img className="hero__full" src={heroFull} alt="" />
+        <picture>
+          <source media="(max-width: 600px)" srcSet={heroPhotoMobile} />
+          <source media="(max-width: 1100px)" srcSet={heroFullTablet} />
+          <img className="hero__full" src={heroFull} alt="" />
+        </picture>
         {/* Tablet / mobile: separate layers */}
         <img className="hero__bg" src={heroBg} alt="" />
         <picture>
