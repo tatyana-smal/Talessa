@@ -89,6 +89,10 @@ export default function MyYarn() {
 
       <section className="yarn-section">
         <h2 className="yarn-title">Зручна реєстрація та авторизація</h2>
+        <p className="yarn-text">
+          <b>Простий</b> та зрозумілий <b>процес входу</b> без зайвих кроків. Користувач може
+          зареєструватися за <b>email</b> або швидко увійти за допомогою <b>Google чи Apple.</b>
+        </p>
       </section>
 
       <section className="yarn-section">
@@ -101,6 +105,12 @@ export default function MyYarn() {
 
       <section className="yarn-section">
         <h2 className="yarn-title">Android &amp; iOS</h2>
+        <p className="yarn-text">
+          Застосунок <b>адаптований для</b> обох основних мобільних платформ — <b>Android та iOS.</b>
+          <br />
+          Інтерфейс зберігає єдину візуальну концепцію, водночас враховуючи особливості кожної
+          платформи: навігацію, системні елементи та звичні для користувачів патерни взаємодії.
+        </p>
       </section>
 
       <section className="yarn-section">
