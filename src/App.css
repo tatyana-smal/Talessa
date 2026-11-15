@@ -1,4 +1,4 @@
-.page {
+﻿.page {
   overflow-x: clip;
   background: var(--bg);
 }
@@ -144,7 +144,7 @@
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 1440 / 561;
+  aspect-ratio: 2000 / 779;
 }
 
 /* Desktop: the hero is one scalable "canvas". Every size is a share of its width
