@@ -1,0 +1,201 @@
+/* "My yarn" case page (Figma frame is 1920px wide, sizes scale down with clamp) */
+.yarn {
+  --y-bg: #fcf7f4;
+  --y-text: #3d2104;
+  --y-accent: #805131;
+  --y-gold: #d29852;
+  --y-stroke: #8e7067;
+  min-height: 100vh;
+  overflow-x: clip;
+  background: var(--y-bg);
+  color: var(--y-text);
+}
+
+/* ---- Hero ---- */
+.yarn-hero {
+  position: relative;
+  aspect-ratio: 1920 / 1299;
+  overflow: hidden;
+}
+.yarn-hero__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.yarn-hero__veil {
+  position: absolute;
+  inset: 0;
+  background: rgba(252, 247, 244, 0.2);
+}
+.yarn-hero__text {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  padding: clamp(16px, 3.3vw, 64px) clamp(16px, 1.7vw, 32px);
+  text-align: right;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.yarn-hero__text h1 {
+  font-family: inherit;
+  font-weight: 700;
+  font-size: clamp(28px, 5vw, 96px);
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+}
+.yarn-hero__text p {
+  max-width: 64%;
+  font-size: clamp(14px, 2.5vw, 48px);
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+}
+
+.phone {
+  position: absolute;
+  width: 13.49%; /* 259 / 1920 */
+  aspect-ratio: 259 / 525.57;
+}
+.phone__screen {
+  position: absolute;
+  left: 5.43%;
+  top: 2.47%;
+  width: 89.14%;
+  height: 95.27%;
+  background: var(--y-bg);
+  overflow: hidden;
+}
+.phone__content {
+  position: absolute;
+  inset: 3.35% 0 0 0;
+  width: 100%;
+  height: 96.65%;
+  object-fit: contain;
+}
+.phone__bar {
+  position: absolute;
+  inset: 0 0 96.65% 0;
+  background: var(--y-bg);
+}
+.phone__status {
+  position: absolute;
+  inset: 1.84% 8.28% 96.94% 76.11%;
+  width: auto;
+  height: auto;
+}
+.phone__frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.phone__notch {
+  position: absolute;
+  inset: 2.16% 45.22% 95.88% 38.45%;
+  width: auto;
+  height: auto;
+}
+
+/* ---- Content sections ---- */
+.yarn-section {
+  padding: clamp(24px, 3.3vw, 64px) clamp(16px, 1.7vw, 32px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 2.5vw, 48px);
+}
+.yarn-title {
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: clamp(22px, 2.5vw, 48px);
+  line-height: 1;
+  letter-spacing: -0.005em;
+  text-transform: uppercase;
+  color: var(--y-accent);
+  padding: 10px 16px;
+}
+.yarn-quote,
+.yarn-text {
+  font-size: clamp(16px, 2.5vw, 48px);
+  line-height: normal;
+  padding: 0 clamp(0px, 3.3vw, 64px);
+}
+.yarn-quote {
+  font-weight: 700;
+  font-style: italic;
+}
+.yarn-text b {
+  font-weight: 800;
+}
+
+.yarn-features {
+  display: flex;
+  gap: 10px;
+  padding: clamp(12px, 1.7vw, 32px);
+  background: var(--y-bg);
+  border: 3px solid var(--y-stroke);
+}
+.yarn-box {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: clamp(12px, 1.7vw, 32px) clamp(8px, 0.8vw, 16px);
+  border: 3px solid var(--y-stroke);
+  box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.25);
+}
+.yarn-box--plan { border-color: var(--y-accent); }
+.yarn-box__head {
+  padding: clamp(8px, 1.5vw, 29px) 16px;
+  background: var(--y-gold);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: clamp(18px, 2.5vw, 48px);
+  line-height: normal;
+  color: #040404;
+}
+.yarn-list {
+  margin: 0;
+  padding-left: clamp(28px, 3.75vw, 72px);
+  font-size: clamp(16px, 2.5vw, 48px);
+  line-height: normal;
+}
+.yarn-list li::marker { font-weight: 800; }
+.yarn-list b { font-weight: 800; }
+
+/* ---- End ---- */
+.yarn-end {
+  position: relative;
+  min-height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(24px, 4vw, 77px) clamp(16px, 6vw, 120px);
+  overflow: hidden;
+}
+.yarn-end__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.3;
+}
+.yarn-end p {
+  position: relative;
+  text-align: center;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 900;
+  font-size: clamp(26px, 6.67vw, 128px);
+  line-height: 1.2;
+}
+
+@media (max-width: 800px) {
+  .yarn-features { flex-direction: column; }
+  .yarn-hero__text p { max-width: 100%; }
+  .phone { width: 18%; }
+}
