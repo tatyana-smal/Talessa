@@ -28,7 +28,7 @@ const apps = [
     title: 'Підтримка здоров’я бітьків немовляти',
     image: appHealth,
     art: cardDevices,
-    href: '#apps',
+    href: '/health',
   },
   {
     key: 'plants',

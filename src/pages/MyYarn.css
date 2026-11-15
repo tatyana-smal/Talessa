@@ -194,6 +194,32 @@
   line-height: 1.2;
 }
 
+/* ---- "RISE" health case page: same layout, green palette ---- */
+.yarn--health {
+  --y-bg: #f3f8f6;
+  --y-text: #1f3a33;
+  --y-accent: #2f6a5b;
+}
+.yarn-hero--health { aspect-ratio: 1920 / 1000; }
+.yarn-hero--health .yarn-hero__veil { background: rgba(31, 58, 51, 0.35); }
+.yarn-hero__text--center {
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+.yarn-hero__text--center h1 {
+  font-size: clamp(22px, 3.6vw, 70px);
+  letter-spacing: 0.04em;
+}
+.yarn-hero__devices {
+  position: absolute;
+  right: 9%;
+  bottom: 12%;
+  width: 22%;
+  height: auto;
+}
+
 @media (max-width: 800px) {
   .yarn-features { flex-direction: column; }
   .yarn-hero__text p { max-width: 100%; }
