@@ -5,7 +5,6 @@
 
 .only-compact { display: none; }
 .apps__heading { display: none; }
-.hero__fade { display: none; }
 .burger { display: none; }
 .send--small { display: none; }
 
@@ -82,33 +81,8 @@
 .hero {
   position: relative;
   overflow: hidden;
-  min-height: 560.5px;
 }
 .hero picture { display: contents; }
-.hero__bg {
-  position: absolute;
-  left: 0;
-  top: 7.6%; /* 42.6 / 560.5, as in Figma */
-  width: 100%;
-  height: 92.4%;
-  object-fit: cover;
-}
-.hero__photo {
-  position: relative;
-  display: block;
-  margin-left: auto;
-  width: 54.45%;
-  height: auto;
-  aspect-ratio: 1569 / 1122;
-}
-.hero__overlay {
-  position: absolute;
-  left: 88px;
-  top: 7.6%;
-  height: 92.4%;
-  /* at 1440px = 768px (as in Figma); on wider screens it grows with the photo seam (45.55%) */
-  width: calc(45.55% + 112px);
-}
 .hero__content {
   position: absolute;
   top: 0;
@@ -150,10 +124,7 @@
 /* Desktop: the hero is one scalable "canvas". Every size is a share of its width
    (1cqw = 1% of the hero width), so image and text scale together, as at 1440px in Figma. */
 @media (min-width: 1101px) {
-  .hero { container-type: inline-size; min-height: 0; }
-  .hero__bg,
-  .hero__photo,
-  .hero__overlay { display: none; }
+  .hero { container-type: inline-size; }
   .hero__content {
     top: 0;
     left: 0;
@@ -330,27 +301,11 @@
   .send--big { display: none; }
   .send--small { display: block; }
 
-  .hero { min-height: 400px; }
-  .hero__photo { width: 60.94%; aspect-ratio: 467.975 / 391.705; }
-  .hero__overlay { display: none; }
-  .hero__content {
-    top: 30px;
-    width: 60.03%;
-    padding: 8px 32px 0 16px;
-    gap: 8px;
-    align-items: stretch;
-    background-image: linear-gradient(
-      89.6deg,
-      rgba(254, 229, 207, 0) 1.37%,
-      rgba(254, 229, 207, 0.8) 7%,
-      rgba(254, 229, 207, 0.946) 53%,
-      rgba(254, 229, 207, 0.893) 82.5%,
-      rgba(254, 229, 207, 0) 91%
-    );
-  }
-  .hero__content h1 { width: auto; padding: 0 10px; font-size: 40px; line-height: 1.1; }
-  .hero__content p { width: auto; padding: 0 10px; font-size: 20px; line-height: 1.2; }
-  .hero__actions { justify-content: flex-start; gap: 16px; padding: 0 64px 0 16px; flex-wrap: wrap; }
+  /* hero text: sizes are set in cqw below (tablet) and in the mobile block */
+  .hero__content { max-width: none; align-items: stretch; }
+  .hero__content h1 { width: auto; line-height: 1.1; }
+  .hero__content p { width: auto; line-height: 1.2; }
+  .hero__actions { justify-content: flex-start; flex-wrap: wrap; }
   .btn { height: auto; padding: 8px 16px; font-size: 16px; }
   .btn--pill { padding: 8px; }
 
@@ -412,16 +367,13 @@
 
 /* Tablet: the hero is one scalable image + text sized in cqw (1cqw = 1% of the 768px frame) */
 @media (min-width: 601px) and (max-width: 1100px) {
-  .hero { container-type: inline-size; min-height: 0; }
-  .hero__bg,
-  .hero__photo { display: none; }
+  .hero { container-type: inline-size; }
   .hero__full { aspect-ratio: 1536 / 784; }
   .hero__content {
     top: 3.906cqw;
     width: 60.03cqw;
     padding: 1.042cqw 4.167cqw 0 2.083cqw;
     gap: 1.042cqw;
-    background-image: none;
   }
   .hero__content h1 { padding: 0 1.302cqw; font-size: 5.208cqw; }
   .hero__content p { padding: 0 1.302cqw; font-size: 2.604cqw; }
@@ -431,7 +383,6 @@
 
 /* ---------- Mobile (390) ---------- */
 @media (max-width: 600px) {
-  .hero__full { display: none; }
   .header { padding: 8px; min-height: 79px; gap: 16px; }
   .logo { top: 8px; width: 161px; height: 71px; }
   .burger {
@@ -461,28 +412,19 @@
   .nav--open a:not(.btn) { display: block; }
   .nav--open .nav__cta { display: inline-flex; justify-content: center; }
 
-  .hero { min-height: 0; padding-top: 225px; margin-top: 16px; }
-  .hero__bg { display: none; }
-  .hero__photo { width: 100%; aspect-ratio: 390 / 391.7; }
-  .hero__fade {
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 249px;
-    width: 100%;
-    height: 63px;
-  }
+  /* Mobile: one scalable image (780x1234) + text sized in cqw (1cqw = 1% of the 390px frame) */
+  .hero { container-type: inline-size; margin-top: 16px; }
+  .hero__full { aspect-ratio: 780 / 1234; }
   .hero__content {
-    top: 11px;
+    top: 2.821cqw;
     width: 100%;
-    padding: 0 32px 16px 8px;
-    background-image: linear-gradient(
-      180deg,
-      rgba(254, 229, 207, 1) 0%,
-      rgba(254, 229, 207, 0.95) 60%,
-      rgba(254, 229, 207, 0) 100%
-    );
+    padding: 0 8.205cqw 4.103cqw 2.051cqw;
+    gap: 2.051cqw;
   }
+  .hero__content h1 { padding: 0 2.564cqw; font-size: 10.256cqw; }
+  .hero__content p { padding: 0 2.564cqw; font-size: 5.128cqw; }
+  .hero__actions { gap: 4.103cqw; padding: 0 16.41cqw 0 4.103cqw; }
+  .hero .btn { padding: 2.051cqw 4.103cqw; font-size: 4.103cqw; border-radius: 6.154cqw; }
   .hero__actions .btn--outline { background: var(--block); }
 
   .apps__heading { font-size: 40px; line-height: 1.1; margin: 16px 0 0; padding: 0 8px; }

@@ -1,11 +1,8 @@
 import type { CSSProperties } from 'react'
 import Header from '../components/Header'
-import heroBg from '../assets/img/hero-bg.png'
 import heroFull from '../assets/img/hero-full.webp'
 import heroFullTablet from '../assets/img/hero-full-tablet.webp'
-import heroPhotoTablet from '../assets/img/hero-photo-tablet.png'
-import heroPhotoMobile from '../assets/img/hero-photo-mobile.png'
-import heroFade from '../assets/img/hero-fade-mobile.svg'
+import heroFullMobile from '../assets/img/hero-full-mobile.webp'
 import arrow from '../assets/img/arrow.svg'
 import arrowSmall from '../assets/img/arrow-small.svg'
 import arrowMobile from '../assets/img/arrow-mobile.svg'
@@ -48,19 +45,12 @@ export default function Home() {
       <Header />
 
       <section className="hero" id="top">
-        {/* Desktop: one merged image (background + photo + text fade) that scales as a whole */}
+        {/* One merged image per screen size (background + photo + text fade) that scales as a whole */}
         <picture>
-          <source media="(max-width: 600px)" srcSet={heroPhotoMobile} />
+          <source media="(max-width: 600px)" srcSet={heroFullMobile} />
           <source media="(max-width: 1100px)" srcSet={heroFullTablet} />
           <img className="hero__full" src={heroFull} alt="" />
         </picture>
-        {/* Tablet / mobile: separate layers */}
-        <img className="hero__bg" src={heroBg} alt="" />
-        <picture>
-          <source media="(max-width: 600px)" srcSet={heroPhotoMobile} />
-          <img className="hero__photo" src={heroPhotoTablet} alt="" />
-        </picture>
-        <img className="hero__fade" src={heroFade} alt="" />
         <div className="hero__content">
           <h1>
             Застосунки,
