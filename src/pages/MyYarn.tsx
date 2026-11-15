@@ -8,6 +8,11 @@ import screen3 from '../assets/img/yarn/screen3.png'
 import phoneFrame from '../assets/img/yarn/phone-frame.svg'
 import status from '../assets/img/yarn/status.svg'
 import notch from '../assets/img/yarn/notch.svg'
+import onboarding from '../assets/img/yarn/onboarding.webp'
+import registration from '../assets/img/yarn/registration.webp'
+import detail from '../assets/img/yarn/detail.webp'
+import platforms from '../assets/img/yarn/platforms.webp'
+import night from '../assets/img/yarn/night.webp'
 
 function Phone({ screen, style }: { screen: string; style: CSSProperties }) {
   return (
@@ -87,6 +92,8 @@ export default function MyYarn() {
         </div>
       </section>
 
+      <img className="yarn-img" src={onboarding} alt="Екрани знайомства із застосунком" />
+
       <section className="yarn-section">
         <h2 className="yarn-title">Зручна реєстрація та авторизація</h2>
         <p className="yarn-text">
@@ -94,6 +101,7 @@ export default function MyYarn() {
           зареєструватися за <b>email</b> або швидко увійти за допомогою <b>Google чи Apple.</b>
         </p>
       </section>
+      <img className="yarn-img" src={registration} alt="Екрани реєстрації та входу" />
 
       <section className="yarn-section">
         <h2 className="yarn-title">Детальна картка пряжі та зручні фільтри</h2>
@@ -102,6 +110,7 @@ export default function MyYarn() {
           <b>у кілька дотиків.</b>
         </p>
       </section>
+      <img className="yarn-img" src={detail} alt="Каталог, фільтри та детальна картка пряжі" />
 
       <section className="yarn-section">
         <h2 className="yarn-title">Android &amp; iOS</h2>
@@ -112,6 +121,7 @@ export default function MyYarn() {
           платформи: навігацію, системні елементи та звичні для користувачів патерни взаємодії.
         </p>
       </section>
+      <img className="yarn-img" src={platforms} alt="Фільтр на Android та iOS" />
 
       <section className="yarn-section">
         <h2 className="yarn-title">Адаптація для нічного режиму</h2>
@@ -125,6 +135,7 @@ export default function MyYarn() {
           Затишне в’язання — у будь-який час доби.
         </p>
       </section>
+      <img className="yarn-img" src={night} alt="Скриня з пряжею вечірнього затишку" />
 
       <section className="yarn-end">
         <img className="yarn-end__bg" src={endBg} alt="" />

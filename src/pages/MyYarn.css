@@ -200,6 +200,11 @@
   --y-text: #1f3a33;
   --y-accent: #2f6a5b;
 }
+.yarn-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
 .health-img {
   display: block;
   width: 100%;
