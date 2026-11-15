@@ -295,7 +295,8 @@
 
   /* as in Figma: auto layout, horizontal, aligned right + centre, gap 12, header hugs the 35px menu row */
   .header { padding: 8px; min-height: 0; margin-bottom: 10px; }
-  .logo { left: 0; top: -7px; width: 182px; height: 90px; }
+  /* logo is 182x90 at 768px and shrinks with the menu on narrower tablets */
+  .logo { left: 0; top: -7px; width: min(182px, calc(28.76vw - 38.9px)); height: auto; aspect-ratio: 182 / 90; }
   .nav {
     flex-wrap: nowrap;
     white-space: nowrap;
@@ -305,7 +306,7 @@
     gap: clamp(2px, 1.56vw, 12px);
   }
   .nav a:not(.btn), .lang { padding: clamp(4px, 1.04vw, 8px); }
-  .nav__cta { gap: 4px; padding: clamp(4px, 1.04vw, 8px); }
+  .nav .nav__cta { gap: 4px; padding: clamp(4px, 1.04vw, 8px); font-size: inherit; }
   .send--big { display: none; }
   .send--small { display: block; }
 
