@@ -214,8 +214,8 @@
   padding: clamp(8px, 2vw, 40px) 0 0;
   background: linear-gradient(180deg, #d3f1e6 0%, #9fbdb2 55%, #87a79b 100%);
 }
-.yarn-hero--health { aspect-ratio: 1920 / 1000; }
-.yarn-hero--health .yarn-hero__veil { background: rgba(31, 58, 51, 0.35); }
+.yarn-hero--health { aspect-ratio: 1920 / 1306; }
+.yarn-hero--health .yarn-hero__veil { background: linear-gradient(180deg, rgba(31, 20, 8, 0.35) 0%, rgba(31, 20, 8, 0) 40%); }
 .yarn-hero__text--center {
   align-items: center;
   text-align: center;

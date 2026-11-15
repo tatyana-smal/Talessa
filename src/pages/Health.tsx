@@ -1,6 +1,6 @@
 import Header from '../components/Header'
 import heroPhoto from '../assets/img/app-health.png'
-import devices from '../assets/img/card-devices.png'
+import hero from '../assets/img/health/hero.webp'
 import adaptive from '../assets/img/health/adaptive.webp'
 import data from '../assets/img/health/data.webp'
 import mobile from '../assets/img/health/mobile.webp'
@@ -15,7 +15,7 @@ export default function Health() {
       <Header />
 
       <section className="yarn-hero yarn-hero--health">
-        <img className="yarn-hero__bg" src={heroPhoto} alt="" />
+        <img className="yarn-hero__bg" src={hero} alt="RISE on laptop, tablet and phone, with a young family at sunrise" />
         <div className="yarn-hero__veil" />
         <div className="yarn-hero__text yarn-hero__text--center">
           <h1>
@@ -24,7 +24,6 @@ export default function Health() {
             for Young Parents
           </h1>
         </div>
-        <img className="yarn-hero__devices" src={devices} alt="RISE on laptop, tablet and phone" />
       </section>
 
       <section className="yarn-section">
