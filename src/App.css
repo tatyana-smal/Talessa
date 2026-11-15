@@ -140,6 +140,39 @@
   padding: 0 84px;
 }
 
+.hero__full {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1440 / 561;
+}
+
+/* Desktop: the hero is one scalable "canvas". Every size is a share of its width
+   (1cqw = 1% of the hero width), so image and text scale together, as at 1440px in Figma. */
+@media (min-width: 1101px) {
+  .hero { container-type: inline-size; min-height: 0; }
+  .hero__bg,
+  .hero__photo,
+  .hero__overlay { display: none; }
+  .hero__content {
+    top: 0;
+    left: 0;
+    width: 64.375cqw;
+    max-width: none;
+    padding: 5.389cqw 4.444cqw 0;
+    gap: 1.111cqw;
+  }
+  .hero__content h1 { width: 50.69cqw; max-width: none; font-size: 4.444cqw; }
+  .hero__content p { width: 35.97cqw; max-width: none; font-size: 1.667cqw; }
+  .hero__actions { gap: 3.333cqw; padding: 0 5.833cqw; }
+  .hero .btn {
+    height: 3.333cqw;
+    padding: 0 1.111cqw;
+    font-size: 1.667cqw;
+    border-radius: 1.667cqw;
+  }
+}
+
 /* ---------- App cards ---------- */
 .apps {
   display: flex;
@@ -298,6 +331,7 @@
   .send--small { display: block; }
 
   .hero { min-height: 400px; }
+  .hero__full { display: none; }
   .hero__photo { width: 60.94%; aspect-ratio: 467.975 / 391.705; }
   .hero__overlay { display: none; }
   .hero__content {

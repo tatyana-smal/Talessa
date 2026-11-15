@@ -1,10 +1,9 @@
 import type { CSSProperties } from 'react'
 import Header from '../components/Header'
 import heroBg from '../assets/img/hero-bg.png'
-import heroPhoto from '../assets/img/hero-photo.png'
+import heroFull from '../assets/img/hero-full.webp'
 import heroPhotoTablet from '../assets/img/hero-photo-tablet.png'
 import heroPhotoMobile from '../assets/img/hero-photo-mobile.png'
-import heroOverlay from '../assets/img/hero-overlay.svg'
 import heroFade from '../assets/img/hero-fade-mobile.svg'
 import arrow from '../assets/img/arrow.svg'
 import arrowSmall from '../assets/img/arrow-small.svg'
@@ -48,13 +47,14 @@ export default function Home() {
       <Header />
 
       <section className="hero" id="top">
+        {/* Desktop: one merged image (background + photo + text fade) that scales as a whole */}
+        <img className="hero__full" src={heroFull} alt="" />
+        {/* Tablet / mobile: separate layers */}
         <img className="hero__bg" src={heroBg} alt="" />
         <picture>
           <source media="(max-width: 600px)" srcSet={heroPhotoMobile} />
-          <source media="(max-width: 1100px)" srcSet={heroPhotoTablet} />
-          <img className="hero__photo" src={heroPhoto} alt="" />
+          <img className="hero__photo" src={heroPhotoTablet} alt="" />
         </picture>
-        <img className="hero__overlay" src={heroOverlay} alt="" />
         <img className="hero__fade" src={heroFade} alt="" />
         <div className="hero__content">
           <h1>
