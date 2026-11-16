@@ -4,6 +4,7 @@
 }
 
 .only-compact { display: none; }
+.apps-block { display: contents; } /* heading + app cards form one layout on tablet */
 .apps__heading { display: none; }
 .burger { display: none; }
 .send--small { display: none; }
@@ -378,6 +379,15 @@
 
 /* Tablet: the hero is one scalable image + text sized in cqw (1cqw = 1% of the 768px frame) */
 @media (min-width: 601px) and (max-width: 1100px) {
+  /* Figma: the whole tablet page is one vertical auto layout, gap 32, padding 0 */
+  .page { display: flex; flex-direction: column; gap: 32px; }
+  .page > span[id] { position: absolute; } /* empty anchors must not create extra gaps */
+  .header { margin-bottom: 0; }
+  /* "My apps" heading + cards: their own vertical layout, gap 10 */
+  .apps-block { display: flex; flex-direction: column; gap: 10px; }
+  .apps__heading { margin: 0; }
+  .features { padding: 0 8px; }
+
   .hero { container-type: inline-size; }
   .hero__full { aspect-ratio: 1536 / 784; }
   .hero__content {

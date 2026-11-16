@@ -72,6 +72,7 @@ export default function Home() {
         </div>
       </section>
 
+      <div className="apps-block">
       <h2 className="apps__heading">Мої застосунки</h2>
       <section className="apps" id="apps">
         <div className="card card--title">
@@ -95,6 +96,7 @@ export default function Home() {
           </a>
         ))}
       </section>
+      </div>
 
       <section className="features">
         <article className="feature" id="design">
