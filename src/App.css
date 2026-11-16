@@ -151,7 +151,7 @@
   justify-content: center;
   height: 280px;
   max-width: 1440px;
-  margin: 64px auto;
+  margin: 96px auto 64px; /* top 96 / bottom 64, as in Figma */
 }
 .card {
   position: relative;
