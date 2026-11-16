@@ -3,15 +3,18 @@ import logo from '../assets/img/logo.png'
 import sendIcon from '../assets/img/send.svg'
 import sendSmall from '../assets/img/send-small.svg'
 import burger from '../assets/img/burger.svg'
-
-const links = [
-  { href: '/#apps', label: 'Застосунки' },
-  { href: '/#design', label: 'Дизайн' },
-  { href: '/#blog', label: 'Блог' },
-  { href: '/#about', label: 'Про мене' },
-]
+import { useLanguage } from '../i18n/useLanguage'
+import { header } from '../i18n/strings'
 
 export default function Header() {
+  const { lang, toggleLang } = useLanguage()
+  const t = header[lang]
+  const links = [
+    { href: '/#apps', label: t.apps },
+    { href: '/#design', label: t.design },
+    { href: '/#blog', label: t.blog },
+    { href: '/#about', label: t.about },
+  ]
   const [open, setOpen] = useState(false)
   const navRef = useRef<HTMLElement>(null)
   const burgerRef = useRef<HTMLButtonElement>(null)
@@ -46,9 +49,17 @@ export default function Header() {
             {l.label}
           </a>
         ))}
-        <button type="button" className="lang">UA</button>
+        <button
+          type="button"
+          className="lang"
+          aria-label={t.switchTo}
+          title={t.switchTo}
+          onClick={toggleLang}
+        >
+          {lang === 'uk' ? 'UA' : 'EN'}
+        </button>
         <a href="/#contact" className="btn btn--dark btn--pill nav__cta">
-          Написати мені
+          {t.contact}
           <img className="send send--big" src={sendIcon} alt="" width={24} height={24} />
           <img className="send send--small" src={sendSmall} alt="" width={16} height={16} />
         </a>
