@@ -326,7 +326,7 @@
   .apps {
     gap: 10px;
     margin: 0;
-    padding: 16px 8px;
+    padding: 64px 8px 16px; /* top 64 / bottom 16, as in Figma */
     max-width: none;
     height: auto;
   }
@@ -346,10 +346,12 @@
     background-size: 100% 100%, 121.34% 156.67%;
     background-position: 0 0, 100% 49.5%;
   }
-  .card__badge { top: auto; right: auto; width: 173px; height: 82px; }
-  .card--yarn .card__badge { left: 55px; top: 12px; }
-  .card--health .card__badge { left: 13px; top: -20px; }
-  .card--plants .card__badge { left: 74px; top: -8px; }
+  /* badge is 173px wide on a 244px card at 768px: keep that share on narrower tablets */
+  .card__badge { top: auto; right: auto; width: 70.9%; height: auto; aspect-ratio: 173 / 82; }
+  /* "У розробці" labels sit on one level, just above the cards (as in Figma) */
+  .card--yarn .card__badge { left: 17.6%; top: -17.1%; }
+  .card--health .card__badge { left: 27.5%; top: -17.1%; }
+  .card--plants .card__badge { left: 29.5%; top: -17.1%; }
   .card--yarn .card__art { right: 14px; bottom: 25px; width: 97px; height: 120.4px; }
   .card--health .card__art { right: 18px; bottom: 18px; width: 131px; height: 83px; }
 
@@ -451,6 +453,7 @@
   .card--plants { height: 316.24px; padding: 16px; }
   .card h2 { font-size: 29.76px; min-height: 3.6em; }
   .card--plants h2 { min-height: 0; }
+  .card__badge { width: 173px; height: 82px; aspect-ratio: auto; }
   .card--yarn .card__badge { left: 84px; top: 35px; }
   .card--health .card__badge { left: 82px; top: 18px; width: 155px; height: 81px; }
   .card--plants .card__badge { left: 82px; top: 46px; }
