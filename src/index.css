@@ -26,7 +26,7 @@
   --fs-lead: 24px;     --lh-lead: 1.3;      /* hero paragraph, descriptions on desktop */
   --fs-body: 16px;     --lh-body: 1.5;      /* forms, legal text, footer, UI on tablet */
   --fs-caption: 14px;  --lh-caption: 1.4;   /* captions, dates, copyright */
-  --fs-intro: 36px;    --lh-intro: 1.2;     /* Вступ: intro paragraph on case pages, Inter Medium Italic (500) */
+  --fs-intro: 48px;    --lh-intro: 1.2;     /* Вступ: intro paragraph of case pages, Inter Bold Italic (700) */
 
   /* ---- Spacing (only these steps) ---- */
   --space-1: 8px;

@@ -151,17 +151,16 @@
   padding: 0 clamp(0px, 3.3cqw, 64px);
 }
 /* intro paragraph: 240px indent at full width (the column is 1280px there), shrinking with the column */
-/* "Вступ" token: 36px Inter Medium Italic, scales with the column (36/48 of the body text size) */
+/* "Вступ" token (--fs-intro): 48px Inter Bold Italic at 1920px, scales with the column; used by both case pages */
+.yarn-quote,
 .yarn-text--indent {
   font-style: italic;
-  font-weight: 500;
-  font-size: clamp(14px, 1.875cqw, var(--fs-intro));
-  line-height: var(--lh-intro);
-  padding-right: clamp(0px, 3.3cqw, 64px); padding-left: clamp(0px, 18.75cqw, 240px); }
-.yarn-quote {
   font-weight: 700;
-  font-style: italic;
+  font-size: clamp(16px, 2.5cqw, var(--fs-intro));
+  line-height: var(--lh-intro);
 }
+.yarn-text--indent {
+  padding-right: clamp(0px, 3.3cqw, 64px); padding-left: clamp(0px, 18.75cqw, 240px); }
 .yarn-text b {
   font-weight: 800;
 }
