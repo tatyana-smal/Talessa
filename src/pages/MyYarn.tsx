@@ -1,5 +1,6 @@
 import { Fragment, type CSSProperties } from 'react'
 import Header from '../components/Header'
+import Footer from '../components/Footer'
 import Rich from '../components/Rich'
 import { useLanguage } from '../i18n/useLanguage'
 import { yarn } from '../i18n/yarnStrings'
@@ -137,6 +138,8 @@ export default function MyYarn() {
           ))}
         </p>
       </section>
+
+      <Footer />
     </div>
   )
 }

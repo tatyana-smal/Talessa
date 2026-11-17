@@ -1,4 +1,5 @@
 import Header from '../components/Header'
+import Footer from '../components/Footer'
 import heroPhoto from '../assets/img/app-health.png'
 import hero from '../assets/img/health/hero.webp'
 import adaptive from '../assets/img/health/adaptive.webp'
@@ -95,6 +96,8 @@ export default function Health() {
           raise happier families
         </p>
       </section>
+
+      <Footer />
     </div>
   )
 }

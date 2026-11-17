@@ -1,5 +1,6 @@
 import { Fragment, type CSSProperties } from 'react'
 import Header from '../components/Header'
+import Footer from '../components/Footer'
 import { useLanguage } from '../i18n/useLanguage'
 import { home } from '../i18n/strings'
 import heroFull from '../assets/img/hero-full.webp'
@@ -112,6 +113,8 @@ export default function Home() {
           </div>
         </article>
       </section>
+
+      <Footer />
 
       <span id="about" />
       <span id="contact" />

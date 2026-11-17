@@ -24,6 +24,47 @@ export const header: Record<
   },
 }
 
+export const footer: Record<
+  Lang,
+  {
+    tagline: string
+    pages: string
+    apps: string
+    help: string
+    appsLinks: { yarn: string; health: string; plants: string }
+    inDevelopment: string
+    support: string
+    privacy: string
+    write: string
+    rights: string
+  }
+> = {
+  uk: {
+    tagline: 'Застосунки, що турбуються про те, що для нас важливе',
+    pages: 'Сторінки',
+    apps: 'Застосунки',
+    help: 'Допомога',
+    appsLinks: { yarn: 'Моя колекція пряжі', health: 'Підтримка здоров’я', plants: 'Мій календар рослин' },
+    inDevelopment: 'у розробці',
+    support: 'Підтримка',
+    privacy: 'Політика конфіденційності',
+    write: 'Написати нам',
+    rights: 'Усі права захищено.',
+  },
+  en: {
+    tagline: 'Apps that care about what matters to us',
+    pages: 'Pages',
+    apps: 'Apps',
+    help: 'Help',
+    appsLinks: { yarn: 'My yarn collection', health: 'New Parent Wellness', plants: 'My Plant Calendar' },
+    inDevelopment: 'in development',
+    support: 'Support',
+    privacy: 'Privacy Policy',
+    write: 'Contact us',
+    rights: 'All rights reserved.',
+  },
+}
+
 export const home: Record<
   Lang,
   {
