@@ -22,13 +22,13 @@
   .legal .header { min-height: 79px; }
 }
 
-/* Page column. At the 1920px artboard the side margins are 240px (content 1440px);
+/* Page column. At the 1920px artboard the side margins are 320px (content 1280px);
    on narrower screens the margins shrink linearly down to 16px at 600px and below.
    Everything inside is sized in cqw (a share of this column's width), so text and
    pictures shrink together with it. */
 .yarn-wrap {
   container-type: inline-size;
-  width: min(calc(100% - 2 * clamp(16px, calc(16.97vw - 85.8px), 240px)), 1440px);
+  width: min(calc(100% - 2 * clamp(16px, calc(23.03vw - 122.2px), 320px)), 1280px);
   margin-inline: auto;
 }
 /* ---- Hero ---- */
