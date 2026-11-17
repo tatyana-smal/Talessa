@@ -164,6 +164,7 @@
   padding-right: clamp(0px, 3.3cqw, 64px);
   padding-left: clamp(0px, 5.8cqw, 74px);
 }
+.yarn-quote { padding-left: clamp(0px, 5.8cqw, 74px); }
 .yarn-section--intro { padding-bottom: 0; }
 .yarn-section--after-intro { padding-top: clamp(16px, 5cqw, 64px); }
 .yarn-text b {
