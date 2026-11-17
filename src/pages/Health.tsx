@@ -1,5 +1,8 @@
+import { Fragment } from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import { useLanguage } from '../i18n/useLanguage'
+import { health } from '../i18n/healthStrings'
 import heroPhoto from '../assets/img/app-health.png'
 import hero from '../assets/img/health/hero.webp'
 import adaptive from '../assets/img/health/adaptive.webp'
@@ -8,93 +11,83 @@ import mobile from '../assets/img/health/mobile.webp'
 import errors from '../assets/img/health/errors.webp'
 import night from '../assets/img/health/night.webp'
 
-/* Case page of the "RISE" health & wellness app. The copy is in English for now;
-   it will be linked from the English version of the site later. */
+/* Case page of the "RISE" health & wellness app (Ukrainian and English). */
 export default function Health() {
+  const { lang } = useLanguage()
+  const t = health[lang]
+
   return (
-    <div className="yarn yarn--health" lang="en">
+    <div className="yarn yarn--health" lang={lang}>
       <Header />
 
       <div className="yarn-wrap">
       <section className="yarn-hero yarn-hero--health">
-        <img className="yarn-hero__bg" src={hero} alt="RISE on laptop, tablet and phone, with a young family at sunrise" />
+        <img className="yarn-hero__bg" src={hero} alt={t.alt.hero} />
         <div className="yarn-hero__veil" />
         <div className="yarn-hero__text yarn-hero__text--center">
           <h1>
-            Health &amp; Wellness Tracker
-            <br />
-            for Young Parents
+            {t.heroTitle.map((line, i) => (
+              <Fragment key={line}>
+                {i > 0 && <br />}
+                {line}
+              </Fragment>
+            ))}
           </h1>
         </div>
       </section>
 
       <section className="yarn-section">
-        <h2 className="yarn-title">About the project</h2>
-        <p className="yarn-text">
-          Many health apps focus on metrics. During my research, I discovered that young parents
-          often need something different: clear guidance, emotional support, and confidence that
-          they’re taking care of themselves as well as their children. This idea became the
-          foundation of RISE
-        </p>
+        <h2 className="yarn-title">{t.aboutTitle}</h2>
+        <p className="yarn-text">{t.aboutText}</p>
       </section>
 
       <section className="yarn-section">
-        <h2 className="yarn-title">Solution</h2>
-        <p className="yarn-text">
-          RISE transforms health data into clear, personalized guidance so young parents can
-          understand themselves, recover faster and care for their families with more energy
-        </p>
+        <h2 className="yarn-title">{t.solutionTitle}</h2>
+        <p className="yarn-text">{t.solutionText}</p>
       </section>
 
       <section className="yarn-section">
-        <h2 className="yarn-title">Adaptive setting</h2>
-        <p className="yarn-text">
-          The user can select only the parameters they wish to track. There is also a separate tab
-          where you can set up custom trackers and make notes
-        </p>
+        <h2 className="yarn-title">{t.adaptiveTitle}</h2>
+        <p className="yarn-text">{t.adaptiveText}</p>
       </section>
-      <img className="health-img" src={adaptive} alt="RISE account screen on laptop, tablet and phone" />
+      <img className="health-img" src={adaptive} alt={t.alt.adaptive} />
 
       <section className="yarn-section">
-        <h2 className="yarn-title">Clear data and accessible analysis</h2>
-        <p className="yarn-text">Clear data with result analysis and actionable AI-driven advice</p>
+        <h2 className="yarn-title">{t.dataTitle}</h2>
+        <p className="yarn-text">{t.dataText}</p>
       </section>
       <div className="health-band">
-        <img className="health-img health-img--narrow" src={data} alt="RISE dashboards on tablets" />
+        <img className="health-img health-img--narrow" src={data} alt={t.alt.data} />
       </div>
 
       <section className="yarn-section">
-        <h2 className="yarn-title">Mobile-friendly, easy-to-read adaptation</h2>
+        <h2 className="yarn-title">{t.mobileTitle}</h2>
       </section>
       <div className="health-band">
-        <img className="health-img" src={mobile} alt="A father with a child using RISE on a phone" />
+        <img className="health-img" src={mobile} alt={t.alt.mobile} />
       </div>
 
       <section className="yarn-section">
-        <h2 className="yarn-title">Friendly and humorous error messages</h2>
-        <p className="yarn-text">
-          For a person already experiencing chronic stress, encountering a notification about
-          issues with their app creates additional stress. To mitigate this, the messages are
-          lighthearted and humorous, and they resonate empathetically with the target user.
-        </p>
+        <h2 className="yarn-title">{t.errorsTitle}</h2>
+        <p className="yarn-text">{t.errorsText}</p>
       </section>
-      <img className="health-img" src={errors} alt="Humorous 503 and 429 error screens" />
+      <img className="health-img" src={errors} alt={t.alt.errors} />
 
       <section className="yarn-section">
-        <h2 className="yarn-title">Adaptation for night mode</h2>
-        <p className="yarn-text">
-          Parents often find time for themselves only late at night, so it is important to adjust
-          the screen to a comfortable night mode.
-        </p>
+        <h2 className="yarn-title">{t.nightTitle}</h2>
+        <p className="yarn-text">{t.nightText}</p>
       </section>
-      <img className="health-img" src={night} alt="RISE in light and dark mode" />
+      <img className="health-img" src={night} alt={t.alt.night} />
 
       <section className="yarn-end">
         <img className="yarn-end__bg" src={heroPhoto} alt="" />
         <p>
-          Because healthy parents
-          <br />
-          raise happier families
+          {t.endText.map((line, i) => (
+            <Fragment key={line}>
+              {i > 0 && <br />}
+              {line}
+            </Fragment>
+          ))}
         </p>
       </section>
       </div>
