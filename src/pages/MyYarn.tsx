@@ -42,6 +42,7 @@ export default function MyYarn() {
     <div className="yarn">
       <Header />
 
+      <div className="yarn-wrap">
       <section className="yarn-hero">
         <img className="yarn-hero__bg" src={lang === 'uk' ? titleBg : titleBgEn} alt="" />
         <div className="yarn-hero__veil" />
@@ -138,6 +139,7 @@ export default function MyYarn() {
           ))}
         </p>
       </section>
+      </div>
 
       <Footer />
     </div>

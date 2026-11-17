@@ -22,6 +22,15 @@
   .legal .header { min-height: 79px; }
 }
 
+/* Page column. At the 1920px artboard the side margins are 240px (content 1440px);
+   on narrower screens the margins shrink linearly down to 16px at 600px and below.
+   Everything inside is sized in cqw (a share of this column's width), so text and
+   pictures shrink together with it. */
+.yarn-wrap {
+  container-type: inline-size;
+  width: min(calc(100% - 2 * clamp(16px, calc(16.97vw - 85.8px), 240px)), 1440px);
+  margin-inline: auto;
+}
 /* ---- Hero ---- */
 .yarn-hero {
   position: relative;
@@ -46,7 +55,7 @@
   flex-direction: column;
   align-items: flex-end;
   gap: 8px;
-  padding: clamp(16px, 3.3vw, 64px) clamp(16px, 1.7vw, 32px);
+  padding: clamp(16px, 3.3cqw, 64px) clamp(16px, 1.7cqw, 32px);
   text-align: right;
   /* Figma: Playfair Bold, line height 120%, letter spacing 5%, opsz 12 / wdth 100 */
   font-family: 'Playfair', Georgia, serif;
@@ -57,13 +66,13 @@
 .yarn-hero__text h1 {
   font-family: inherit;
   font-weight: 700;
-  font-size: clamp(28px, 5vw, 96px); /* 96px at 1920px */
+  font-size: clamp(28px, 5cqw, 96px); /* 96px at 1920px */
   line-height: 1.2;
   letter-spacing: 0.05em;
 }
 .yarn-hero__text p {
   max-width: 64.4%; /* 1236 / 1920 */
-  font-size: clamp(14px, 2.5vw, 48px); /* 48px at 1920px */
+  font-size: clamp(14px, 2.5cqw, 48px); /* 48px at 1920px */
   line-height: 1.2;
   letter-spacing: 0.05em;
   text-wrap: balance; /* no lonely word on the last line */
@@ -116,15 +125,15 @@
 
 /* ---- Content sections ---- */
 .yarn-section {
-  padding: clamp(24px, 3.3vw, 64px) clamp(16px, 1.7vw, 32px);
+  padding: clamp(24px, 3.3cqw, 64px) clamp(16px, 1.7cqw, 32px);
   display: flex;
   flex-direction: column;
-  gap: clamp(16px, 2.5vw, 48px);
+  gap: clamp(16px, 2.5cqw, 48px);
 }
 .yarn-title {
   font-family: var(--font-body);
   font-weight: 800;
-  font-size: clamp(22px, 2.5vw, 48px);
+  font-size: clamp(22px, 2.5cqw, 48px);
   line-height: 1;
   letter-spacing: -0.005em;
   text-transform: uppercase;
@@ -133,9 +142,9 @@
 }
 .yarn-quote,
 .yarn-text {
-  font-size: clamp(16px, 2.5vw, 48px);
+  font-size: clamp(16px, 2.5cqw, 48px);
   line-height: normal;
-  padding: 0 clamp(0px, 3.3vw, 64px);
+  padding: 0 clamp(0px, 3.3cqw, 64px);
 }
 .yarn-quote {
   font-weight: 700;
@@ -148,7 +157,7 @@
 .yarn-features {
   display: flex;
   gap: var(--space-2);
-  padding: clamp(12px, 1.7vw, 32px);
+  padding: clamp(12px, 1.7cqw, 32px);
   background: var(--canvas);
   border: 3px solid var(--text-muted);
 }
@@ -158,24 +167,24 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
-  padding: clamp(12px, 1.7vw, 32px) clamp(8px, 0.8vw, 16px);
+  padding: clamp(12px, 1.7cqw, 32px) clamp(8px, 0.8cqw, 16px);
   border: 3px solid var(--text-muted);
   box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.25);
 }
 .yarn-box--plan { border-color: var(--accent); }
 .yarn-box__head {
-  padding: clamp(8px, 1.5vw, 29px) 16px;
+  padding: clamp(8px, 1.5cqw, 29px) 16px;
   background: var(--case-gold);
   font-family: var(--font-body);
   font-weight: 700;
-  font-size: clamp(18px, 2.5vw, 48px);
+  font-size: clamp(18px, 2.5cqw, 48px);
   line-height: normal;
   color: var(--text);
 }
 .yarn-list {
   margin: 0;
-  padding-left: clamp(28px, 3.75vw, 72px);
-  font-size: clamp(16px, 2.5vw, 48px);
+  padding-left: clamp(28px, 3.75cqw, 72px);
+  font-size: clamp(16px, 2.5cqw, 48px);
   line-height: normal;
 }
 .yarn-list li::marker { font-weight: 800; }
@@ -188,7 +197,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: clamp(24px, 4vw, 77px) clamp(16px, 6vw, 120px);
+  padding: clamp(24px, 4cqw, 77px) clamp(16px, 6cqw, 120px);
   overflow: hidden;
 }
 .yarn-end__bg {
@@ -205,7 +214,7 @@
   font-family: 'Playfair', Georgia, serif;
   font-variation-settings: 'opsz' 12, 'wdth' 100;
   font-weight: 900;
-  font-size: clamp(26px, 6.67vw, 128px);
+  font-size: clamp(26px, 6.67cqw, 128px);
   line-height: 1.2;
   text-wrap: balance;
 }
@@ -227,7 +236,7 @@
 }
 /* soft warm band behind the screenshots (canvas -> surface) */
 .health-band {
-  padding: clamp(8px, 2vw, 40px) 0 0;
+  padding: clamp(8px, 2cqw, 40px) 0 0;
   background: linear-gradient(180deg, var(--canvas) 0%, var(--surface) 100%);
 }
 .yarn-hero--health { aspect-ratio: 1920 / 1306; }
@@ -239,7 +248,7 @@
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
 }
 .yarn-hero__text--center h1 {
-  font-size: clamp(22px, 3.6vw, 70px);
+  font-size: clamp(22px, 3.6cqw, 70px);
   letter-spacing: 0.04em;
 }
 .yarn-hero__devices {

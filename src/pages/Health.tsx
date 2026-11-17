@@ -15,6 +15,7 @@ export default function Health() {
     <div className="yarn yarn--health" lang="en">
       <Header />
 
+      <div className="yarn-wrap">
       <section className="yarn-hero yarn-hero--health">
         <img className="yarn-hero__bg" src={hero} alt="RISE on laptop, tablet and phone, with a young family at sunrise" />
         <div className="yarn-hero__veil" />
@@ -96,6 +97,7 @@ export default function Health() {
           raise happier families
         </p>
       </section>
+      </div>
 
       <Footer />
     </div>
