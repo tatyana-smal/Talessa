@@ -266,5 +266,4 @@
 @media (max-width: 800px) {
   .yarn-features { flex-direction: column; }
   .yarn-hero__text p { max-width: 100%; }
-  .phone { width: 18%; }
 }
