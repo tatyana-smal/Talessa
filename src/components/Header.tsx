@@ -68,7 +68,7 @@ export default function Header() {
         ref={burgerRef}
         type="button"
         className="burger"
-        aria-label="Меню"
+        aria-label={t.menu}
         aria-expanded={open}
         onClick={() => setOpen((v) => !v)}
       >

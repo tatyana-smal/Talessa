@@ -1,7 +1,9 @@
 import type { Lang } from './context'
 
-/* Demo strings: only the header is translated for now. */
-export const header: Record<Lang, { apps: string; design: string; blog: string; about: string; contact: string; switchTo: string }> = {
+export const header: Record<
+  Lang,
+  { apps: string; design: string; blog: string; about: string; contact: string; switchTo: string; menu: string }
+> = {
   uk: {
     apps: 'Застосунки',
     design: 'Дизайн',
@@ -9,6 +11,7 @@ export const header: Record<Lang, { apps: string; design: string; blog: string; 
     about: 'Про мене',
     contact: 'Написати мені',
     switchTo: 'Switch to English',
+    menu: 'Меню',
   },
   en: {
     apps: 'Apps',
@@ -17,5 +20,65 @@ export const header: Record<Lang, { apps: string; design: string; blog: string; 
     about: 'About me',
     contact: 'Contact me',
     switchTo: 'Перемкнути на українську',
+    menu: 'Menu',
+  },
+}
+
+export const home: Record<
+  Lang,
+  {
+    heroTitle: string[]
+    heroText: string
+    exploreApps: string
+    exploreAppsShort: string
+    about: string
+    myApps: string
+    apps: { yarn: string; health: string; plants: string }
+    inDevelopment: string
+    designTitle: string
+    designText: string
+    blogTitle: string
+    blogText: string
+  }
+> = {
+  uk: {
+    heroTitle: ['Застосунки,', 'що турбуються про те, що для нас важливе'],
+    heroText:
+      'Люблю перетворювати ідеї на щось корисне і цікаве: створюю власні застосунки, проєктую інтерфейси та ділюся тим, чим живу, що мене захоплює і надихає',
+    exploreApps: 'Переглянути застосунки',
+    exploreAppsShort: 'Застосунки',
+    about: 'Про мене',
+    myApps: 'Мої застосунки',
+    apps: {
+      yarn: 'Моя колекція пряжі',
+      health: 'Підтримка здоров’я бітьків немовляти',
+      plants: 'Мій календар рослин',
+    },
+    inDevelopment: 'У розробці',
+    designTitle: 'Дизайн',
+    designText: 'Розробка, дизайн, програмуванняння цифрових продуктів та підтримка їх на різних етапах',
+    blogTitle: 'Блог',
+    blogText: 'Про творчість, в’язання, навчання, дизайн, рослини і життя у балансі (наскільки це можливо)))',
+  },
+  en: {
+    heroTitle: ['Apps that care about what matters to us'],
+    heroText:
+      'I love turning ideas into something useful and inspiring. I create my own apps, design user interfaces, and share the things I’m passionate about, what I love, and what inspires me',
+    exploreApps: 'Explore Apps',
+    exploreAppsShort: 'Apps',
+    about: 'About me',
+    myApps: 'My apps',
+    apps: {
+      yarn: 'My yarn collection',
+      health: 'New Parent Wellness',
+      plants: 'My Plant Calendar',
+    },
+    inDevelopment: 'In Development',
+    designTitle: 'Design',
+    designText:
+      'Development, design, and programming of digital products, with support throughout every stage of their lifecycle',
+    blogTitle: 'Blog',
+    blogText:
+      'A little bit of creativity, knitting, learning, design, plants, and finding balance in everyday life (as much as possible, anyway!)))',
   },
 }

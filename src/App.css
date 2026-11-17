@@ -199,6 +199,11 @@
   z-index: 1;
   pointer-events: none;
 }
+/* the English label is wider (2.5:1) than the Ukrainian one: keep its arrow tip on the same spot */
+.card__badge--en {
+  object-fit: contain;
+  object-position: left bottom;
+}
 .card__art {
   position: absolute;
   pointer-events: none;

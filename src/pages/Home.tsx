@@ -1,5 +1,7 @@
-import type { CSSProperties } from 'react'
+import { Fragment, type CSSProperties } from 'react'
 import Header from '../components/Header'
+import { useLanguage } from '../i18n/useLanguage'
+import { home } from '../i18n/strings'
 import heroFull from '../assets/img/hero-full.webp'
 import heroFullTablet from '../assets/img/hero-full-tablet.webp'
 import heroFullMobile from '../assets/img/hero-full-mobile.webp'
@@ -11,35 +13,22 @@ import appHealth from '../assets/img/app-health.png'
 import appPlants from '../assets/img/app-plants.png'
 import designImg from '../assets/img/design.png'
 import blogImg from '../assets/img/blog.png'
-import badge from '../assets/img/badge.png'
+import badgeUk from '../assets/img/badge.png'
+import badgeEn from '../assets/img/badge-en.webp'
 import cardPhones from '../assets/img/card-phones.png'
 import cardDevices from '../assets/img/card-devices.png'
 
 const apps = [
-  {
-    key: 'yarn',
-    title: 'Моя колекція пряжі',
-    image: appYarn,
-    art: cardPhones,
-    href: '/my-yarn',
-  },
-  {
-    key: 'health',
-    title: 'Підтримка здоров’я бітьків немовляти',
-    image: appHealth,
-    art: cardDevices,
-    href: '/health',
-  },
-  {
-    key: 'plants',
-    title: 'Мій календар рослин',
-    image: appPlants,
-    art: null,
-    href: '#apps',
-  },
-]
+  { key: 'yarn', image: appYarn, art: cardPhones, href: '/my-yarn' },
+  { key: 'health', image: appHealth, art: cardDevices, href: '/health' },
+  { key: 'plants', image: appPlants, art: null, href: '#apps' },
+] as const
 
 export default function Home() {
+  const { lang } = useLanguage()
+  const t = home[lang]
+  const badge = lang === 'uk' ? badgeUk : badgeEn
+
   return (
     <div className="page">
       <Header />
@@ -53,34 +42,29 @@ export default function Home() {
         </picture>
         <div className="hero__content">
           <h1>
-            Застосунки,
-            <br />
-            що турбуються про те, що для нас важливе
+            {t.heroTitle.map((line, i) => (
+              <Fragment key={line}>
+                {i > 0 && <br />}
+                {line}
+              </Fragment>
+            ))}
           </h1>
-          <p>
-            Люблю перетворювати ідеї на щось корисне і цікаве: створюю власні
-            застосунки, проєктую інтерфейси та ділюся тим, чим живу, що мене
-            захоплює і надихає
-          </p>
+          <p>{t.heroText}</p>
           <div className="hero__actions">
             <a href="#apps" className="btn btn--dark">
-              <span className="only-desktop">Переглянути застосунки</span>
-              <span className="only-compact">Застосунки</span>
+              <span className="only-desktop">{t.exploreApps}</span>
+              <span className="only-compact">{t.exploreAppsShort}</span>
             </a>
-            <a href="#about" className="btn btn--outline">Про мене</a>
+            <a href="#about" className="btn btn--outline">{t.about}</a>
           </div>
         </div>
       </section>
 
       <div className="apps-block">
-      <h2 className="apps__heading">Мої застосунки</h2>
+      <h2 className="apps__heading">{t.myApps}</h2>
       <section className="apps" id="apps">
         <div className="card card--title">
-          <h2>
-            Мої
-            <br />
-            застосунки
-          </h2>
+          <h2>{t.myApps}</h2>
           <img src={arrow} alt="" className="card__arrow" />
         </div>
         {apps.map((app) => (
@@ -90,8 +74,8 @@ export default function Home() {
             className={`card card--app card--${app.key}`}
             style={{ '--img': `url(${app.image})` } as CSSProperties}
           >
-            <img src={badge} alt="У розробці" className="card__badge" />
-            <h2>{app.title}</h2>
+            <img src={badge} alt={t.inDevelopment} className={`card__badge card__badge--${lang}`} />
+            <h2>{t.apps[app.key]}</h2>
             {app.art && <img src={app.art} alt="" className="card__art" />}
           </a>
         ))}
@@ -102,9 +86,9 @@ export default function Home() {
         <article className="feature" id="design">
           <img src={designImg} alt="" className="feature__img" />
           <div className="feature__text">
-            <h2>Дизайн</h2>
-            <p>Розробка, дизайн, програмуванняння цифрових продуктів та підтримка їх на різних етапах</p>
-            <a href="#design" aria-label="Дизайн">
+            <h2>{t.designTitle}</h2>
+            <p>{t.designText}</p>
+            <a href="#design" aria-label={t.designTitle}>
               <picture>
                 <source media="(max-width: 600px)" srcSet={arrowMobile} />
                 <img src={arrowSmall} alt="" />
@@ -117,9 +101,9 @@ export default function Home() {
             <img src={blogImg} alt="" className="feature__img" />
           </div>
           <div className="feature__text">
-            <h2>Блог</h2>
-            <p>Про творчість, в’язання, навчання, дизайн, рослини і життя у балансі (наскільки це можливо)))</p>
-            <a href="#blog" aria-label="Блог">
+            <h2>{t.blogTitle}</h2>
+            <p>{t.blogText}</p>
+            <a href="#blog" aria-label={t.blogTitle}>
               <picture>
                 <source media="(max-width: 600px)" srcSet={arrowMobile} />
                 <img src={arrowSmall} alt="" />

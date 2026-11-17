@@ -31,6 +31,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     document.documentElement.lang = lang
+    document.title = lang === 'uk' ? 'Талесса — Talessa' : 'Talessa'
   }, [lang])
 
   const value = useMemo(() => ({ lang, setLang, toggleLang }), [lang, setLang, toggleLang])
