@@ -1,6 +1,10 @@
-import type { CSSProperties } from 'react'
+import { Fragment, type CSSProperties } from 'react'
 import Header from '../components/Header'
+import Rich from '../components/Rich'
+import { useLanguage } from '../i18n/useLanguage'
+import { yarn } from '../i18n/yarnStrings'
 import titleBg from '../assets/img/yarn/title-bg.png'
+import titleBgEn from '../assets/img/yarn/title-bg-en.webp'
 import endBg from '../assets/img/yarn/end-bg.png'
 import screen1 from '../assets/img/yarn/screen1.png'
 import screen2 from '../assets/img/yarn/screen2.png'
@@ -13,6 +17,7 @@ import registration from '../assets/img/yarn/registration.webp'
 import detail from '../assets/img/yarn/detail.webp'
 import platforms from '../assets/img/yarn/platforms.webp'
 import night from '../assets/img/yarn/night.webp'
+import nightEn from '../assets/img/yarn/night-en.webp'
 
 function Phone({ screen, style }: { screen: string; style: CSSProperties }) {
   return (
@@ -29,20 +34,26 @@ function Phone({ screen, style }: { screen: string; style: CSSProperties }) {
 }
 
 export default function MyYarn() {
+  const { lang } = useLanguage()
+  const t = yarn[lang]
+
   return (
     <div className="yarn">
       <Header />
 
       <section className="yarn-hero">
-        <img className="yarn-hero__bg" src={titleBg} alt="" />
+        <img className="yarn-hero__bg" src={lang === 'uk' ? titleBg : titleBgEn} alt="" />
         <div className="yarn-hero__veil" />
         <div className="yarn-hero__text">
           <h1>
-            Моя
-            <br />
-            колекція пряжі
+            {t.heroTitle.map((line, i) => (
+              <Fragment key={line}>
+                {i > 0 && <br />}
+                {line}
+              </Fragment>
+            ))}
           </h1>
-          <p>Для в’язальниць, у яких пряжі стає все більше, а місця для неї — все менше</p>
+          <p>{t.heroTagline}</p>
         </div>
         <Phone screen={screen1} style={{ left: '63.75%', top: '41.9%' }} />
         <Phone screen={screen2} style={{ left: '80.7%', top: '46%' }} />
@@ -50,99 +61,80 @@ export default function MyYarn() {
       </section>
 
       <section className="yarn-section">
-        <h2 className="yarn-title">Про проєкт</h2>
-        <p className="yarn-quote">
-          «В’язання речей та колекціонування пряжі – це два окремих хобі». Цей проєкт допомагає
-          в’язальщіцям швидко ореєнтуватися у своїх запасах пряжі, а також надає можливість
-          обмінюватися залишками пряжі і мати всі свої проєкти в одному додатку
-        </p>
-        <p className="yarn-text">
-          Платформа створює єдиний цифровий простір для рукодільниць, де можна зберігати та
-          впорядковувати колекцію пряжі, працювати з проєктами й знаходити натхнення. Додаток
-          допомагає вести детальний облік матеріалів, автоматично розраховувати залишки та
-          орієнтовну собівартість виробів, швидко знаходити потрібну пряжу, а в подальшому —
-          розширити можливості для обміну матеріалами та взаємодії зі спільнотою.
-        </p>
+        <h2 className="yarn-title">{t.aboutTitle}</h2>
+        <p className="yarn-quote">{t.aboutQuote}</p>
+        <p className="yarn-text">{t.aboutText}</p>
       </section>
 
       <section className="yarn-section">
-        <h2 className="yarn-title">Функціонал додатку</h2>
+        <h2 className="yarn-title">{t.featuresTitle}</h2>
         <div className="yarn-features">
           <div className="yarn-box">
-            <h3 className="yarn-box__head">Вже реалізовано:</h3>
+            <h3 className="yarn-box__head">{t.doneHead}</h3>
             <ol className="yarn-list">
-              <li><b>Склад</b>, фільтр по складу пряжі, товщині, відстежування залишків.</li>
-              <li><b>Профіль</b> з можливістю зберігання ідей та фото проектів.</li>
+              {t.done.map((item) => (
+                <li key={item}>
+                  <Rich text={item} />
+                </li>
+              ))}
             </ol>
           </div>
           <div className="yarn-box yarn-box--plan">
-            <h3 className="yarn-box__head">В подальшому планується розробити:</h3>
+            <h3 className="yarn-box__head">{t.planHead}</h3>
             <ol className="yarn-list">
-              <li>
-                <b>Обмін залишків</b> з фото, цінами, описом, фільтру по цінам, назві та складу
-                (щось на кшталт маркетплейсу)
-              </li>
-              <li><b>Чат</b> для спілкування. Галерея робіт з рейтингом або просто «лайками»</li>
-              <li>
-                <b>Блог</b> з технологіями, прикладами для розрахунків тих чи інших конструкцій
-                одягу та інших речей у проектах.
-              </li>
+              {t.plan.map((item) => (
+                <li key={item}>
+                  <Rich text={item} />
+                </li>
+              ))}
             </ol>
           </div>
         </div>
       </section>
 
-      <img className="yarn-img" src={onboarding} alt="Екрани знайомства із застосунком" />
+      <img className="yarn-img" src={onboarding} alt={t.alt.onboarding} />
 
       <section className="yarn-section">
-        <h2 className="yarn-title">Зручна реєстрація та авторизація</h2>
+        <h2 className="yarn-title">{t.registrationTitle}</h2>
         <p className="yarn-text">
-          <b>Простий</b> та зрозумілий <b>процес входу</b> без зайвих кроків. Користувач може
-          зареєструватися за <b>email</b> або швидко увійти за допомогою <b>Google чи Apple.</b>
+          <Rich text={t.registrationText} />
         </p>
       </section>
-      <img className="yarn-img" src={registration} alt="Екрани реєстрації та входу" />
+      <img className="yarn-img" src={registration} alt={t.alt.registration} />
 
       <section className="yarn-section">
-        <h2 className="yarn-title">Детальна картка пряжі та зручні фільтри</h2>
+        <h2 className="yarn-title">{t.detailTitle}</h2>
         <p className="yarn-text">
-          Уся інформація про пряжу — в одному місці. <b>Пошук</b> потрібного матеріалу —{' '}
-          <b>у кілька дотиків.</b>
+          <Rich text={t.detailText} />
         </p>
       </section>
-      <img className="yarn-img" src={detail} alt="Каталог, фільтри та детальна картка пряжі" />
+      <img className="yarn-img" src={detail} alt={t.alt.detail} />
 
       <section className="yarn-section">
-        <h2 className="yarn-title">Android &amp; iOS</h2>
+        <h2 className="yarn-title">{t.platformsTitle}</h2>
         <p className="yarn-text">
-          Застосунок <b>адаптований для</b> обох основних мобільних платформ — <b>Android та iOS.</b>
-          <br />
-          Інтерфейс зберігає єдину візуальну концепцію, водночас враховуючи особливості кожної
-          платформи: навігацію, системні елементи та звичні для користувачів патерни взаємодії.
+          <Rich text={t.platformsText} />
         </p>
       </section>
-      <img className="yarn-img" src={platforms} alt="Фільтр на Android та iOS" />
+      <img className="yarn-img" src={platforms} alt={t.alt.platforms} />
 
       <section className="yarn-section">
-        <h2 className="yarn-title">Адаптація для нічного режиму</h2>
+        <h2 className="yarn-title">{t.nightTitle}</h2>
         <p className="yarn-text">
-          В’язання часто стає частиною вечірнього ритуалу — часом для спокою, творчості та затишку.
-          <br />
-          Тому я додала <b>Темний режим</b>, адаптований не лише за кольорами, а й за атмосферою.
-          Темний фон <b>робить</b> інтерфейс <b>комфортнішим у вечірній час</b>, а теплі відтінки та
-          яскраві акценти зберігають характер застосунку.
-          <br />
-          Затишне в’язання — у будь-який час доби.
+          <Rich text={t.nightText} />
         </p>
       </section>
-      <img className="yarn-img" src={night} alt="Скриня з пряжею вечірнього затишку" />
+      <img className="yarn-img" src={lang === 'uk' ? night : nightEn} alt={t.alt.night} />
 
       <section className="yarn-end">
         <img className="yarn-end__bg" src={endBg} alt="" />
         <p>
-          Уся пряжа в одному місці — більше часу
-          <br />
-          на те, що ти любиш
+          {t.endText.map((line, i) => (
+            <Fragment key={line}>
+              {i > 0 && <br />}
+              {line}
+            </Fragment>
+          ))}
         </p>
       </section>
     </div>
