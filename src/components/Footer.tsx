@@ -48,6 +48,7 @@ export default function Footer() {
         <nav className="footer__col" aria-label={t.help}>
           <h3>{t.help}</h3>
           <ul>
+            <li><a href="/contact">{t.write}</a></li>
             <li><a href="/support">{t.support}</a></li>
             <li><a href="/privacy">{t.privacy}</a></li>
             <li><a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></li>

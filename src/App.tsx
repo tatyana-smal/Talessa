@@ -6,6 +6,7 @@ import MyYarn from './pages/MyYarn'
 import Health from './pages/Health'
 import Privacy from './pages/Privacy'
 import Support from './pages/Support'
+import Contact from './pages/Contact'
 import { LanguageProvider } from './i18n/LanguageProvider'
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route path="/health" element={<Health />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/support" element={<Support />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<Home />} />
         </Routes>
       </BrowserRouter>

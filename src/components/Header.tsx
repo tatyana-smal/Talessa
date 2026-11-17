@@ -58,7 +58,7 @@ export default function Header() {
         >
           {lang === 'uk' ? 'UA' : 'EN'}
         </button>
-        <a href="/#contact" className="btn btn--dark btn--pill nav__cta">
+        <a href="/contact" className="btn btn--dark btn--pill nav__cta">
           {t.contact}
           <img className="send send--big" src={sendIcon} alt="" width={24} height={24} />
           <img className="send send--small" src={sendSmall} alt="" width={16} height={16} />
