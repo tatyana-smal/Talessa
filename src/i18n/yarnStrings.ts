@@ -71,7 +71,7 @@ export const yarn: Record<Lang, YarnTexts> = {
     heroTagline: 'For knitters who have more and more yarn but less and less space for it',
     aboutTitle: 'About the project',
     aboutQuote:
-      'Knitting and collecting yarn are two separate hobbies. This app helps knitters easily manage their yarn stashes, offers a way to swap leftover yarn, and keeps all their projects in one place.',
+      '“Knitting and collecting yarn are two separate hobbies.” This app helps knitters easily manage their yarn stashes, offers a way to swap leftover yarn, and keeps all their projects in one place.',
     aboutText:
       'The platform creates a unified digital space for crafters to store and organize their yarn collections, manage projects, and find inspiration. The app helps keep detailed records of materials, automatically calculate remaining stock and estimated production costs, and quickly locate specific yarns, while also paving the way for future features such as material swapping and community interaction.',
     featuresTitle: 'App functionality',
