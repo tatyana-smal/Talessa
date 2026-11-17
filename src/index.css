@@ -1,4 +1,6 @@
 :root {
+  /* Light theme only for now (no automatic dark inversion). Dark theme: see docs/ plan. */
+  color-scheme: only light;
   --bg: #fcf1ea;
   --text: #402510;
   --btn: #402510;
