@@ -42,7 +42,6 @@ export default function Health() {
       </section>
 
       <section className="yarn-section">
-        <h2 className="yarn-title">{t.solutionTitle}</h2>
         <p className="yarn-text">{t.solutionText}</p>
       </section>
 

@@ -5,7 +5,6 @@ export interface HealthTexts {
   heroTitle: string[]
   aboutTitle: string
   aboutText: string
-  solutionTitle: string
   solutionText: string
   adaptiveTitle: string
   adaptiveText: string
@@ -26,7 +25,6 @@ export const health: Record<Lang, HealthTexts> = {
     aboutTitle: 'Про проєкт',
     aboutText:
       'Багато застосунків для здоров’я зосереджені на показниках. У ході свого дослідження я з’ясувала, що молодим батькам часто потрібно дещо інше: чіткі поради, емоційна підтримка та впевненість у тому, що вони дбають не лише про своїх дітей, а й про себе. Ця ідея лягла в основу RISE.',
-    solutionTitle: 'Рішення',
     solutionText:
       'RISE допомагає молодим батькам краще розуміти свій стан не тільки по показникам з приладів, а й помічати, чого потребує організм, і знаходити прості способи відновлювати сили. Щоб вистачало енергії не лише на турботу про дитину, а й на себе.',
     adaptiveTitle: 'Адаптивне налаштування',
@@ -56,7 +54,6 @@ export const health: Record<Lang, HealthTexts> = {
     aboutTitle: 'About the project',
     aboutText:
       'Many health apps focus on metrics. During my research, I discovered that young parents often need something different: clear guidance, emotional support, and confidence that they’re taking care of themselves as well as their children. This idea became the foundation of RISE',
-    solutionTitle: 'Solution',
     solutionText:
       'RISE transforms health data into clear, personalized guidance so young parents can understand themselves, recover faster and care for their families with more energy',
     adaptiveTitle: 'Adaptive setting',
