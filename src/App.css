@@ -131,12 +131,13 @@
     left: 0;
     width: 64.375cqw;
     max-width: none;
-    padding: 5.389cqw 4.444cqw 0;
+    padding: 5.389cqw 4.444cqw 0 6.84cqw; /* one left edge for title, text and buttons */
     gap: 1.111cqw;
+    align-items: flex-start;
   }
   .hero__content h1 { width: 50.69cqw; max-width: none; font-size: 4.444cqw; }
   .hero__content p { width: 35.97cqw; max-width: none; font-size: 1.667cqw; }
-  .hero__actions { gap: 3.333cqw; padding: 0 5.833cqw; }
+  .hero__actions { gap: 3.333cqw; padding: 0; justify-content: flex-start; }
   .hero .btn {
     height: 3.333cqw;
     padding: 0 1.111cqw;
@@ -269,15 +270,16 @@
   flex: 1 1 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start; /* title, text and arrow share one left edge */
   gap: 8px;
   padding: 8px 16px;
-  text-align: center;
+  text-align: left;
 }
+.feature__text a { padding-left: 16px; }
 .feature__text h2 {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   height: 63px; /* fixed in Figma */
   font-size: 36px;
   padding: 0 16px;
@@ -405,7 +407,7 @@
   }
   .hero__content h1 { padding: 0 1.302cqw; font-size: 5.208cqw; }
   .hero__content p { padding: 0 1.302cqw; font-size: 2.604cqw; }
-  .hero__actions { gap: 2.083cqw; padding: 0 8.333cqw 0 2.083cqw; }
+  .hero__actions { gap: 2.083cqw; padding: 0 8.333cqw 0 1.302cqw; } /* same left edge as title and text */
   .hero .btn { padding: 1.042cqw 2.083cqw; font-size: 2.083cqw; border-radius: 3.125cqw; }
 }
 
@@ -451,7 +453,7 @@
   }
   .hero__content h1 { padding: 0 2.564cqw; font-size: 10.256cqw; }
   .hero__content p { padding: 0 2.564cqw; font-size: 5.128cqw; }
-  .hero__actions { gap: 4.103cqw; padding: 0 16.41cqw 0 4.103cqw; }
+  .hero__actions { gap: 4.103cqw; padding: 0 16.41cqw 0 2.564cqw; } /* same left edge as title and text */
   .hero .btn { padding: 2.051cqw 4.103cqw; font-size: 4.103cqw; border-radius: 6.154cqw; }
   .hero__actions .btn--outline { background: var(--block); }
 
@@ -481,5 +483,7 @@
   .feature { flex: none; }
   .feature__text { padding: 8px 16px; }
   .feature__text p { height: auto; min-height: 0; padding: 0; }
+  .feature__text h2 { padding: 0; }
+  .feature__text a { padding-left: 0; }
   .feature__text a img { width: 80px; height: 24px; }
 }
