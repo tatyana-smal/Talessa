@@ -150,8 +150,8 @@
   line-height: normal;
   padding: 0 clamp(0px, 3.3cqw, 64px);
 }
-/* intro paragraph: 64px indent at full width (the column is 1280px there), shrinking with the column */
-.yarn-text--indent { padding-inline: clamp(0px, 5cqw, 64px); }
+/* intro paragraph: 240px indent at full width (the column is 1280px there), shrinking with the column */
+.yarn-text--indent { padding-right: clamp(0px, 3.3cqw, 64px); padding-left: clamp(0px, 18.75cqw, 240px); }
 .yarn-quote {
   font-weight: 700;
   font-style: italic;
