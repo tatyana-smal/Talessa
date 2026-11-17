@@ -15,8 +15,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding: 16px 32px;
-  min-height: 116px;
+  padding: 8px 32px; /* top / bottom 8, sides 32, as in Figma; the header hugs the 51px menu row (67px) */
 }
 .logo {
   position: absolute;
