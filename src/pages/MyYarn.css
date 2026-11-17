@@ -159,8 +159,13 @@
   font-size: clamp(16px, 2.5cqw, var(--fs-intro));
   line-height: var(--lh-intro);
 }
+/* intro: 32px further in than the paragraph below it (32px at full width); 64px between the two paragraphs */
 .yarn-text--indent {
-  padding-right: clamp(0px, 3.3cqw, 64px); padding-left: clamp(0px, 18.75cqw, 240px); }
+  padding-right: clamp(0px, 3.3cqw, 64px);
+  padding-left: clamp(0px, 5.8cqw, 74px);
+}
+.yarn-section--intro { padding-bottom: 0; }
+.yarn-section--after-intro { padding-top: clamp(16px, 5cqw, 64px); }
 .yarn-text b {
   font-weight: 800;
 }

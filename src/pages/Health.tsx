@@ -36,12 +36,12 @@ export default function Health() {
         </div>
       </section>
 
-      <section className="yarn-section">
+      <section className="yarn-section yarn-section--intro">
         <h2 className="yarn-title">{t.aboutTitle}</h2>
         <p className="yarn-text yarn-text--indent">{t.aboutText}</p>
       </section>
 
-      <section className="yarn-section">
+      <section className="yarn-section yarn-section--after-intro">
         <p className="yarn-text">{t.solutionText}</p>
       </section>
 
