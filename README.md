@@ -64,12 +64,14 @@ src/
   components/    Header (меню, перемикач мови), Footer (підвал), Rich (жирний текст і посилання в перекладах)
   pages/         Home, MyYarn, Health, Privacy, Support, Contact (і їхні стилі)
   i18n/          перемикач мови та тексти: strings.ts, yarnStrings.ts, legalStrings.ts, contactStrings.ts
+  index.css      дизайн-токени (кольори за ролями, шрифти, відступи, радіуси, пропорції)
   config.ts      публічний email, назва розробника, дата редакції політики
   assets/img/    зображення (hero, картки, мокапи, сторінки застосунків)
   App.tsx        маршрути
   App.css        стилі головної (десктоп, планшет, телефон)
 docs/
   Чернетка плану сайту.md   план сайту й наступні кроки
+  design-tokens.md          дизайн-система: токени, контраст, що не ввійшло в набір
   screenshots/              скриншоти для цього README
 vercel.json      перенаправлення на index.html (SPA)
 ```

@@ -1,14 +1,25 @@
 /* "My yarn" case page (Figma frame is 1920px wide, sizes scale down with clamp) */
 .yarn {
-  --y-bg: #fcf7f4;
-  --y-text: #3d2104;
-  --y-accent: #805131;
-  --y-gold: #d29852;
-  --y-stroke: #8e7067;
+  /* Case pages use the shared colour roles (canvas / text / accent / text-muted).
+     The gold bar of the "functionality" boxes is the only colour that belongs to this page alone. */
+  --case-gold: #d29852;
   min-height: 100vh;
   overflow-x: clip;
-  background: var(--y-bg);
-  color: var(--y-text);
+  background: var(--canvas);
+  color: var(--text);
+}
+
+/* On the case pages the hero is an opaque photo (the home hero has a transparent top strip),
+   so the header must be tall enough for the whole logo, otherwise the hero would cover it. */
+.yarn .header,
+.legal .header { min-height: 116px; }
+@media (max-width: 1100px) {
+  .yarn .header,
+  .legal .header { min-height: 83px; }
+}
+@media (max-width: 600px) {
+  .yarn .header,
+  .legal .header { min-height: 79px; }
 }
 
 /* ---- Hero ---- */
@@ -61,7 +72,7 @@
 .phone {
   position: absolute;
   width: 13.49%; /* 259 / 1920 */
-  aspect-ratio: 259 / 525.57;
+  aspect-ratio: var(--ratio-device);
 }
 .phone__screen {
   position: absolute;
@@ -69,7 +80,7 @@
   top: 2.47%;
   width: 89.14%;
   height: 95.27%;
-  background: var(--y-bg);
+  background: var(--canvas);
   overflow: hidden;
 }
 .phone__content {
@@ -82,7 +93,7 @@
 .phone__bar {
   position: absolute;
   inset: 0 0 96.65% 0;
-  background: var(--y-bg);
+  background: var(--canvas);
 }
 .phone__status {
   position: absolute;
@@ -117,7 +128,7 @@
   line-height: 1;
   letter-spacing: -0.005em;
   text-transform: uppercase;
-  color: var(--y-accent);
+  color: var(--accent);
   padding: 10px 16px;
 }
 .yarn-quote,
@@ -136,30 +147,30 @@
 
 .yarn-features {
   display: flex;
-  gap: 10px;
+  gap: var(--space-2);
   padding: clamp(12px, 1.7vw, 32px);
-  background: var(--y-bg);
-  border: 3px solid var(--y-stroke);
+  background: var(--canvas);
+  border: 3px solid var(--text-muted);
 }
 .yarn-box {
   flex: 1 1 0;
   min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: var(--space-4);
   padding: clamp(12px, 1.7vw, 32px) clamp(8px, 0.8vw, 16px);
-  border: 3px solid var(--y-stroke);
+  border: 3px solid var(--text-muted);
   box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.25);
 }
-.yarn-box--plan { border-color: var(--y-accent); }
+.yarn-box--plan { border-color: var(--accent); }
 .yarn-box__head {
   padding: clamp(8px, 1.5vw, 29px) 16px;
-  background: var(--y-gold);
+  background: var(--case-gold);
   font-family: var(--font-body);
   font-weight: 700;
   font-size: clamp(18px, 2.5vw, 48px);
   line-height: normal;
-  color: #040404;
+  color: var(--text);
 }
 .yarn-list {
   margin: 0;
@@ -199,12 +210,7 @@
   text-wrap: balance;
 }
 
-/* ---- "RISE" health case page: same layout, green palette ---- */
-.yarn--health {
-  --y-bg: #f3f8f6;
-  --y-text: #1f3a33;
-  --y-accent: #2f6a5b;
-}
+/* ---- "RISE" health case page: same layout and the same palette as the main pages ---- */
 .yarn-img {
   display: block;
   width: 100%;
@@ -219,10 +225,10 @@
   width: min(84%, 1200px);
   margin: 0 auto;
 }
-/* soft mint band behind the screenshots, as in the Figma case page */
+/* soft warm band behind the screenshots (canvas -> surface) */
 .health-band {
   padding: clamp(8px, 2vw, 40px) 0 0;
-  background: linear-gradient(180deg, #d3f1e6 0%, #9fbdb2 55%, #87a79b 100%);
+  background: linear-gradient(180deg, var(--canvas) 0%, var(--surface) 100%);
 }
 .yarn-hero--health { aspect-ratio: 1920 / 1306; }
 .yarn-hero--health .yarn-hero__veil { background: linear-gradient(180deg, rgba(31, 20, 8, 0.35) 0%, rgba(31, 20, 8, 0) 40%); }

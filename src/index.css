@@ -1,13 +1,60 @@
+/* ==========================================================================
+   Talessa design tokens (see docs/design-tokens.md)
+   Names describe the ROLE, not the colour. Everything else in the CSS uses these.
+   ========================================================================== */
 :root {
   /* Light theme only for now (no automatic dark inversion). Dark theme: see docs/ plan. */
   color-scheme: only light;
-  --bg: #fcf1ea;
-  --text: #402510;
-  --btn: #402510;
-  --btn-text: #e7d9ce;
-  --block: #f9dcc2;
-  --font-body: 'Inter', system-ui, sans-serif;
-  --font-head: 'Lora', Georgia, serif;
+
+  /* ---- Colour roles (7) ---- */
+  --canvas: #fcf1ea;     /* page background, form fields, label on dark buttons */
+  --surface: #f9dcc2;    /* raised areas: first card, contents box, notices, footer */
+  --line: #baaa9e;       /* decorative only: dividers */
+  --accent: #805131;     /* titles-labels, links, focus, checkbox */
+  --text: #402510;       /* main text, filled buttons */
+  --text-muted: #6b5646; /* captions, placeholders, borders of fields/cards/outline buttons (>= 3:1) */
+  --danger: #b00020;     /* errors */
+
+  /* ---- Fonts ---- */
+  --font-heading: 'Lora', Georgia, serif;           /* Lora Medium (500) */
+  --font-body: 'Inter', system-ui, sans-serif;      /* Inter Regular (400), bold only for <b> */
+
+  /* ---- Type scale: size / line-height (desktop values; see the media query below) ---- */
+  --fs-display: 64px;  --lh-display: 1.2;   /* main heading, H1 */
+  --fs-heading: 36px;  --lh-heading: 1.2;   /* H2: card, block and section titles */
+  --fs-title-s: 20px;  --lh-title-s: 1.2;   /* small Lora title: footer column, contents box */
+  --fs-lead: 24px;     --lh-lead: 1.3;      /* hero paragraph, descriptions on desktop */
+  --fs-body: 16px;     --lh-body: 1.5;      /* forms, legal text, footer, UI on tablet */
+  --fs-caption: 14px;  --lh-caption: 1.4;   /* captions, dates, copyright */
+
+  /* ---- Spacing (only these steps) ---- */
+  --space-1: 8px;
+  --space-2: 12px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+
+  /* ---- Radii (two) ---- */
+  --radius-control: 24px; /* buttons, chips, fields, popovers */
+  --radius-card: 50px;    /* cards and pictures */
+
+  /* ---- Picture ratios (width / height) ---- */
+  --ratio-card: 5 / 4;               /* app card cover (350x280) */
+  --ratio-picture: 336 / 232;        /* picture in the Design / Blog blocks */
+  --ratio-hero-desktop: 2000 / 779;  /* hero is one scalable image per screen size */
+  --ratio-hero-tablet: 1536 / 784;
+  --ratio-hero-mobile: 780 / 1234;
+  --ratio-device: 259 / 525.57;      /* phone mockup */
+
+  --font-head: var(--font-heading); /* old name, kept so nothing breaks */
+}
+
+@media (max-width: 1100px) {
+  :root {
+    --fs-display: 40px;  --lh-display: 1.1;
+    --fs-heading: 32px;
+    --fs-lead: 20px;     --lh-lead: 1.2;
+  }
 }
 
 *,
@@ -18,7 +65,7 @@
 
 body {
   margin: 0;
-  background: var(--bg);
+  background: var(--canvas);
   color: var(--text);
   font-family: var(--font-body);
   font-weight: 400;
@@ -32,7 +79,7 @@ p {
 
 h1,
 h2 {
-  font-family: var(--font-head);
+  font-family: var(--font-heading);
   font-weight: 500;
   line-height: 1.2;
 }
