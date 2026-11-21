@@ -90,13 +90,19 @@
   transition: opacity 0.2s;
 }
 .btn:hover { opacity: 0.85; }
+/* Figma "volume button prime": drop shadow 0 3 3 #382A23 50% + inner highlight 0 6 6 white 25%, bold label */
 .btn--dark {
   background: var(--text);
   color: var(--canvas);
+  font-weight: 700;
+  box-shadow: 0 3px 3px rgba(56, 42, 35, 0.5), inset 0 6px 6px rgba(255, 255, 255, 0.25);
 }
+.nav__cta { font-weight: 400; } /* header button keeps the regular weight from Figma */
+/* Figma "volume button second": 1px #402510 border, drop shadow 0 3 6 #382A23 35% + inner highlight 0 3 6 white 20% */
 .btn--outline {
-  border: 1px solid var(--text-muted);
+  border: 1px solid var(--text);
   color: var(--text);
+  box-shadow: 0 3px 6px rgba(56, 42, 35, 0.35), inset 0 3px 6px rgba(255, 255, 255, 0.2);
 }
 .btn--pill {
   height: auto;
