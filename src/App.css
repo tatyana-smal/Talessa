@@ -13,6 +13,7 @@
 /* ---------- Header ---------- */
 .header {
   position: relative;
+  z-index: 2; /* the logo is taller than the menu row and must stay above the hero picture */
   display: flex;
   align-items: center;
   justify-content: flex-end;
