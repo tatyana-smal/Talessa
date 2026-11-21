@@ -2,7 +2,7 @@ import type { Lang } from './context'
 
 export const header: Record<
   Lang,
-  { apps: string; design: string; blog: string; about: string; contact: string; switchTo: string; menu: string }
+  { apps: string; design: string; blog: string; about: string; contact: string; switchTo: string; language: string; menu: string }
 > = {
   uk: {
     apps: 'Застосунки',
@@ -11,6 +11,7 @@ export const header: Record<
     about: 'Про мене',
     contact: 'Написати мені',
     switchTo: 'Switch to English',
+    language: 'Language',
     menu: 'Меню',
   },
   en: {
@@ -20,6 +21,7 @@ export const header: Record<
     about: 'About me',
     contact: 'Contact me',
     switchTo: 'Перемкнути на українську',
+    language: 'Мова',
     menu: 'Menu',
   },
 }

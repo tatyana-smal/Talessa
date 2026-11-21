@@ -37,17 +37,44 @@
   font-size: var(--fs-lead);
   line-height: var(--lh-lead);
 }
-.nav a:not(.btn),
-.lang {
+.nav a:not(.btn) {
   padding: 10px; /* keeps the 67px header height from Figma */
   color: var(--text);
 }
-.lang {
-  background: none;
-  border: 0;
-  font: inherit;
-  cursor: pointer;
+/* language switcher: a pill showing the current language, opens to show all of them */
+.langsw {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--canvas);
+  font-size: var(--fs-body);
+  line-height: 1;
 }
+.langsw__opt {
+  flex: 0 0 auto;
+  min-width: 44px;
+  max-width: 64px;
+  height: 36px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  overflow: hidden;
+  cursor: pointer;
+  transition: max-width 0.3s, min-width 0.3s, padding 0.3s, margin 0.3s, opacity 0.2s, background 0.2s, color 0.2s;
+}
+.langsw__opt--active { background: var(--text); color: var(--canvas); }
+.langsw__opt:not(.langsw__opt--active):hover { background: var(--surface); }
+.langsw__opt:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.langsw__opt--hidden { max-width: 0; min-width: 0; padding: 0; margin-left: -2px; opacity: 0; pointer-events: none; }
+@media (prefers-reduced-motion: reduce) { .langsw__opt { transition: none; } }
 
 /* ---------- Buttons ---------- */
 .btn {
@@ -448,7 +475,7 @@
     line-height: normal;
     gap: clamp(2px, 1.56vw, 12px);
   }
-  .nav a:not(.btn), .lang { padding: clamp(4px, 1.04vw, 8px); }
+  .nav a:not(.btn) { padding: clamp(4px, 1.04vw, 8px); }
   .nav .nav__cta { gap: 4px; padding: clamp(4px, 1.04vw, 8px); font-size: inherit; }
   .send--big { display: none; }
   .send--small { display: block; }

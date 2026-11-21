@@ -4,10 +4,11 @@ import sendIcon from '../assets/img/send.svg'
 import sendSmall from '../assets/img/send-small.svg'
 import burger from '../assets/img/burger.svg'
 import { useLanguage } from '../i18n/useLanguage'
+import LangSwitcher from './LangSwitcher'
 import { header } from '../i18n/strings'
 
 export default function Header() {
-  const { lang, toggleLang } = useLanguage()
+  const { lang } = useLanguage()
   const t = header[lang]
   const links = [
     { href: '/#apps', label: t.apps },
@@ -49,15 +50,7 @@ export default function Header() {
             {l.label}
           </a>
         ))}
-        <button
-          type="button"
-          className="lang"
-          aria-label={t.switchTo}
-          title={t.switchTo}
-          onClick={toggleLang}
-        >
-          {lang === 'uk' ? 'UA' : 'EN'}
-        </button>
+        <LangSwitcher label={t.language} />
         <a href="/contact" className="btn btn--dark btn--pill nav__cta">
           {t.contact}
           <img className="send send--big" src={sendIcon} alt="" width={24} height={24} />
