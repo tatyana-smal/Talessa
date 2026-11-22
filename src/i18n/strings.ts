@@ -2,7 +2,7 @@ import type { Lang } from './context'
 
 export const header: Record<
   Lang,
-  { apps: string; design: string; blog: string; about: string; contact: string; switchTo: string; language: string; menu: string }
+  { apps: string; design: string; blog: string; about: string; contact: string; switchTo: string; language: string; theme: string; menu: string }
 > = {
   uk: {
     apps: 'Застосунки',
@@ -12,6 +12,7 @@ export const header: Record<
     contact: 'Написати мені',
     switchTo: 'Switch to English',
     language: 'Language',
+    theme: 'Light / dark theme',
     menu: 'Меню',
   },
   en: {
@@ -22,6 +23,7 @@ export const header: Record<
     contact: 'Contact me',
     switchTo: 'Перемкнути на українську',
     language: 'Мова',
+    theme: 'Світла / темна тема',
     menu: 'Menu',
   },
 }

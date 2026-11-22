@@ -5,6 +5,7 @@ import sendSmall from '../assets/img/send-small.svg'
 import burger from '../assets/img/burger.svg'
 import { useLanguage } from '../i18n/useLanguage'
 import LangSwitcher from './LangSwitcher'
+import ThemeSwitch from './ThemeSwitch'
 import { header } from '../i18n/strings'
 
 export default function Header() {
@@ -51,6 +52,7 @@ export default function Header() {
           </a>
         ))}
         <LangSwitcher label={t.language} />
+        <ThemeSwitch label={t.theme} />
         <a href="/contact" className="btn btn--dark btn--pill nav__cta">
           {t.contact}
           <img className="send send--big" src={sendIcon} alt="" width={24} height={24} />

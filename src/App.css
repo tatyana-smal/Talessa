@@ -77,6 +77,40 @@
 .langsw__opt--hidden { max-width: 0; min-width: 0; padding: 0; margin-left: -2px; opacity: 0; pointer-events: none; }
 @media (prefers-reduced-motion: reduce) { .langsw__opt { transition: none; } }
 
+/* theme switch: outlined track like the language pill, the dark knob slides between sun and moon */
+.themesw {
+  position: relative;
+  flex: 0 0 auto;
+  width: 68px;
+  height: 44px;
+  padding: 3px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--canvas);
+  color: var(--canvas);
+  cursor: pointer;
+}
+.themesw__knob {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--text);
+  box-shadow: 0 3px 3px rgba(56, 42, 35, 0.5), inset 0 6px 6px rgba(255, 255, 255, 0.25);
+  transition: transform 0.3s;
+}
+.themesw--dark .themesw__knob { transform: translateX(24px); }
+.themesw:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { .themesw__knob { transition: none; } }
+
+/* the theme switch makes the menu wider: on small desktops use the tablet text size so the menu does not run into the logo */
+@media (min-width: 1101px) and (max-width: 1300px) {
+  .nav { font-size: 20px; gap: 4px; }
+  .nav a:not(.btn) { padding: 8px; }
+}
+
 /* ---------- Buttons ---------- */
 .btn {
   display: inline-flex;
@@ -482,11 +516,19 @@
     flex-wrap: nowrap;
     white-space: nowrap;
     justify-content: flex-end;
-    font-size: clamp(13px, 2.08vw, 16px);
+    font-size: clamp(13px, 1.95vw, 15px);
     line-height: normal;
-    gap: clamp(2px, 1.56vw, 12px);
+    gap: clamp(2px, 0.78vw, 6px);
   }
-  .nav a:not(.btn) { padding: clamp(4px, 1.04vw, 8px); }
+  .nav a:not(.btn) { padding: clamp(4px, 1.04vw, 8px) clamp(2px, 0.52vw, 4px); }
+  /* compact switches so the menu still fits next to the logo */
+  .langsw { font-size: 14px; }
+  .langsw__opt { height: 28px; min-width: 38px; padding: 0 8px; }
+  .langsw__opt.langsw__opt--hidden { min-width: 0; padding: 0; }
+  .themesw { width: 48px; height: 32px; padding: 2px; }
+  .themesw__knob { width: 26px; height: 26px; }
+  .themesw__knob svg { width: 16px; height: 16px; }
+  .themesw--dark .themesw__knob { transform: translateX(16px); }
   .nav .nav__cta { gap: 4px; padding: clamp(4px, 1.04vw, 8px); font-size: inherit; }
   .send--big { display: none; }
   .send--small { display: block; }
@@ -655,4 +697,14 @@
   .feature__text h2 { padding: 0; }
   .feature__text a { padding-left: 0; }
   .feature__text a img { width: 84px; height: 28px; margin: 0 0 -4px -2px; }
+}
+
+/* narrow tablets: the menu is squeezed a bit more next to the logo */
+@media (min-width: 601px) and (max-width: 700px) {
+  .nav { gap: 0; }
+  .nav a:not(.btn) { padding: 6px 2px; }
+  .langsw__opt { height: 26px; min-width: 34px; padding: 0 6px; }
+  .themesw { width: 42px; height: 30px; }
+  .themesw__knob { width: 24px; height: 24px; }
+  .themesw--dark .themesw__knob { transform: translateX(12px); }
 }
