@@ -55,7 +55,11 @@ npm run dev      # dev-сервер: http://localhost:5173
 npm run build    # перевірка типів і production-збірка у dist/
 npm run preview  # локальний перегляд зібраної версії
 npm run lint     # лінтер
+npm run storybook        # Storybook: http://localhost:6006
+npm run build-storybook  # статична збірка Storybook у storybook-static/
 ```
+
+**Storybook** — каталог компонентів і токенів (кнопки, меню й перемикачі, поле форми, картка застосунку, сторінка Tokens). Історії лежать у `src/stories/`, налаштування — у `.storybook/`.
 
 ## Структура проєкту
 

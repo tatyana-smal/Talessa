@@ -6,6 +6,12 @@
       "runtimeExecutable": "C:\\Program Files\\nodejs\\npm.cmd",
       "runtimeArgs": ["run", "dev"],
       "port": 5173
+    },
+    {
+      "name": "talessa-storybook",
+      "runtimeExecutable": "C:\\Program Files\\nodejs\\npm.cmd",
+      "runtimeArgs": ["run", "storybook", "--", "--no-open", "--ci"],
+      "port": 6006
     }
   ]
 }
